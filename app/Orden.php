@@ -15,11 +15,6 @@ class Orden extends Model
     {
         return $this->hasMany(Categoria::class);
     }
-
-    public function pagos()
-    {
-        return $this->hasMany(Pago::class);
-    }
     public function citas()
     {
         return $this->belongsTo(Cita::class);

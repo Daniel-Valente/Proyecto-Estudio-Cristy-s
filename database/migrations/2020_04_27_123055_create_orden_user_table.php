@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistorialsTable extends Migration
+class CreateOrdenUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateHistorialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('historials', function (Blueprint $table) {
+        Schema::create('orden_user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('usuario_id');
             $table->unsignedBigInteger('orden_id');
@@ -28,6 +28,6 @@ class CreateHistorialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historials');
+        Schema::dropIfExists('orden_user');
     }
 }

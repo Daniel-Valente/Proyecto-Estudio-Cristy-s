@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pago extends Model
 {
-    public function ordens()
+    public function categorias()
     {
-        return $this->belongsTo(Orden::class);
+        return $this->belongsTo(Categoria::class);
     }
 }

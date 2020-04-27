@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Orden;
+use App\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrdenController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class OrdenController extends Controller
      */
     public function index()
     {
-        //
+        $ordens = Orden::all();
+        return view('ordens.ordenIndex', compact('ordens'));
     }
 
     /**
@@ -24,7 +31,8 @@ class OrdenController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
+        return view('ordens.ordenForm', compact('categorias'));
     }
 
     /**
@@ -35,7 +43,17 @@ class OrdenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'fecha_Orden' => 'required|date',
+            'fecha_Entrega' => 'required|date',
+            'descripcion' => 'required|max:255',
+            'estatus' => 'required|max:255'
+        ]);
+
+        $request->merge(['user_id' => \Auth::id()]);
+        Orden::create($request->alll());
+
+        return redirect()->route('orden.index');
     }
 
     /**
@@ -46,7 +64,7 @@ class OrdenController extends Controller
      */
     public function show(Orden $orden)
     {
-        //
+        return view('ordens.ordenShow', compact('orden'));
     }
 
     /**
@@ -57,7 +75,8 @@ class OrdenController extends Controller
      */
     public function edit(Orden $orden)
     {
-        //
+        $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
+        return view('ordens.ordenForm', compact('orden', 'categorias'));
     }
 
     /**
@@ -69,7 +88,17 @@ class OrdenController extends Controller
      */
     public function update(Request $request, Orden $orden)
     {
-        //
+        $request->validate([
+            'fecha_Orden' => 'required|date',
+            'fecha_Entrega' => 'required|date',
+            'descripcion' => 'required|max:255',
+            'estatus' => 'required|max:255'
+        ]);
+
+        Orden::where('id', $orden->id)
+            ->update($request->except('_token', '_method'));
+
+        return redirect()->route('orden.show', $orden->id);
     }
 
     /**
@@ -80,6 +109,7 @@ class OrdenController extends Controller
      */
     public function destroy(Orden $orden)
     {
-        //
+        $orden->delete();
+        return redirect()->route('orden.index');
     }
 }

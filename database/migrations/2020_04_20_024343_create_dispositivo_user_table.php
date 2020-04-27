@@ -14,8 +14,9 @@ class CreateDispositivoUserTable extends Migration
     public function up()
     {
         Schema::create('dispositivo_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('dispositivo_id');
+            $table->bigIncrements('dispositivo_id');
             $table->unsignedBigInteger('user_id');
+            $table->string('nombre');
             $table->timestamps();
         });
     }

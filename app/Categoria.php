@@ -10,4 +10,9 @@ class Categoria extends Model
     {
         return $this->belongsTo(Orden::class);
     }
+
+    public function pagos()
+    {
+        return $this->hasMany(Pago::class);
+    }
 }
