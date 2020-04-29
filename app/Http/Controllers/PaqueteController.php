@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Cita;
+use App\Paquete;
 use Illuminate\Http\Request;
 
-class CitaController extends Controller
+class PaqueteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CitaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cita  $cita
+     * @param  \App\Paquete  $paquete
      * @return \Illuminate\Http\Response
      */
-    public function show(Cita $cita)
+    public function show(Paquete $paquete)
     {
         //
     }
@@ -52,10 +52,10 @@ class CitaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Cita  $cita
+     * @param  \App\Paquete  $paquete
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cita $cita)
+    public function edit(Paquete $paquete)
     {
         //
     }
@@ -64,10 +64,10 @@ class CitaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cita  $cita
+     * @param  \App\Paquete  $paquete
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cita $cita)
+    public function update(Request $request, Paquete $paquete)
     {
         //
     }
@@ -75,10 +75,10 @@ class CitaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cita  $cita
+     * @param  \App\Paquete  $paquete
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cita $cita)
+    public function destroy(Paquete $paquete)
     {
         //
     }

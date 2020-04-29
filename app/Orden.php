@@ -6,7 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Orden extends Model
 {
-    public function users()
+    protected $fillable = [
+        'categoria_id', 'user_id',
+        'fecha_Cita', 'fecha_Orden',
+        'fecha_Entrega', 'descripcion'
+    ];
+    protected $dates = ['fecha_Orden', 'fecha_Cita', 'fecha_Entrega', 'created_at', 'updated_at'];
+
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
@@ -15,9 +22,9 @@ class Orden extends Model
     {
         return $this->hasMany(Categoria::class);
     }
-    public function citas()
-    {
-        return $this->belongsTo(Cita::class);
-    }
 
+    public function paquetes()
+    {
+        return $this->hasMany(Paquete::class);
+    }
 }

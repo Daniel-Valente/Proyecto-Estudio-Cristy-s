@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDispositivosTable extends Migration
+class CreatePaquetesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateDispositivosTable extends Migration
      */
     public function up()
     {
-        Schema::create('dispositivos', function (Blueprint $table) {
+        Schema::create('paquetes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('usuario_id');
-            $table->string('nombre_Dispositivo');
+            $table->string('nombre_Paquete');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateDispositivosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dispositivos');
+        Schema::dropIfExists('paquetes');
     }
 }

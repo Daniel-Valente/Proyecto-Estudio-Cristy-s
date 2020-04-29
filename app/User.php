@@ -37,14 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+
     public function ordens()
     {
         return $this->hasOne(Orden::class);
-    }
-
-    public function dipositivos()
-    {
-        return $this->belongsToMany(Dispositivo::class);
     }
 }

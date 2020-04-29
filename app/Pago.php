@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pago extends Model
 {
-    public function categorias()
+    public function categoria()
     {
         return $this->belongsTo(Categoria::class);
     }

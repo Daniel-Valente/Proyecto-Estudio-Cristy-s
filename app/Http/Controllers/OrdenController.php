@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Orden;
+use App\Paquete;
 use App\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,8 @@ class OrdenController extends Controller
     public function create()
     {
         $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
-        return view('ordens.ordenForm', compact('categorias'));
+        $paquetes = Paquete::all()->pluck('nombre_Paquete', 'id');
+        return view('ordens.ordenForm', compact('categorias', 'paquetes'));
     }
 
     /**
@@ -44,14 +46,13 @@ class OrdenController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'fecha_Orden' => 'required|date',
-            'fecha_Entrega' => 'required|date',
-            'descripcion' => 'required|max:255',
-            'estatus' => 'required|max:255'
+            'fecha_Cita' => 'required|date',
+            'descripcion' => 'required|min:5'
         ]);
 
+        $request->merge(['fecha_Orden' => date('Y-m-d')]);
         $request->merge(['user_id' => \Auth::id()]);
-        Orden::create($request->alll());
+        Orden::create($request->all());
 
         return redirect()->route('orden.index');
     }
