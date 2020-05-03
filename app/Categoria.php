@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
-    public function orden()
+    public $timestamps = false;
+
+    public function ordens()
     {
-        return $this->belongsTo(Orden::class);
+        return $this->hasMany(Orden::class);
     }
 
     public function pagos()

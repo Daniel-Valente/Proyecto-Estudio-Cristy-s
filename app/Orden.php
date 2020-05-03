@@ -8,9 +8,11 @@ class Orden extends Model
 {
     protected $fillable = [
         'categoria_id', 'user_id',
-        'fecha_Cita', 'fecha_Orden',
-        'fecha_Entrega', 'descripcion'
+        'cita_id', 'fecha_Cita',
+        'fecha_Orden', 'fecha_Entrega',
+        'descripcion'
     ];
+
     protected $dates = ['fecha_Orden', 'fecha_Cita', 'fecha_Entrega', 'created_at', 'updated_at'];
 
     public function user()
@@ -18,13 +20,18 @@ class Orden extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function categorias()
+    public function categoria()
     {
-        return $this->hasMany(Categoria::class);
+        return $this->belongsTo(Categoria::class);
+    }
+
+    public function cita()
+    {
+        return $this->belongsTo(Cita::class);
     }
 
     public function paquetes()
     {
-        return $this->hasMany(Paquete::class);
+        return $this->belongsTo(Paquete::class);
     }
 }

@@ -21,7 +21,7 @@ class OrdenController extends Controller
      */
     public function index()
     {
-        $ordens = Orden::all();
+        $ordens = Orden::with('user', 'categoria')->paginate(15);
         return view('ordens.ordenIndex', compact('ordens'));
     }
 
@@ -50,9 +50,20 @@ class OrdenController extends Controller
             'descripcion' => 'required|min:5'
         ]);
 
+        $request->merge(['cita_id' => '1']);
         $request->merge(['fecha_Orden' => date('Y-m-d')]);
         $request->merge(['user_id' => \Auth::id()]);
-        Orden::create($request->all());
+
+        if($request->fecha_Cita == $request->fecha_Orden)
+        {
+            $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
+            return redirect()->route('orden.create')->with([
+                'mensaje' => 'No puede solicitar la cita el mismo día de la orden.',
+                'clase-alerta' => 'alert-warning'
+                ]);
+        }
+        else
+            Orden::create($request->all());
 
         return redirect()->route('orden.index');
     }
@@ -90,8 +101,7 @@ class OrdenController extends Controller
     public function update(Request $request, Orden $orden)
     {
         $request->validate([
-            'fecha_Orden' => 'required|date',
-            'fecha_Entrega' => 'required|date',
+            'fecha_Cita' => 'required|date',
             'descripcion' => 'required|max:255',
             'estatus' => 'required|max:255'
         ]);
