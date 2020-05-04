@@ -1,28 +1,29 @@
 @extends('layouts.tema')
 
 @section('content')
-<section id="about" class="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">Detalles del Pedidos</div>
-                    <div class="card-body">
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card shadow mb-4d">
+                <div class="card-header py-3">Fecha del Pedido</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-success btn-sm">Modificar</a>
+                        <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-info btn-sm">Pagar</a>
+                        <hr>
                         <table class="table">
                             <tr>
                                 <th>ID</th>
-                                <th>Fecha de la orden</th>
-                                <th>Fecha de la cita</th>
-                                <th>Descripción</th>
-                                <th>Categoría</th>
-                                <th>Fecha de la entrega</th>
+                                <th>Fecha Pedido</th>
+                                <th>Fecha Cita</th>
+                                <th>Estado Cita</th>
+                                <th>Fecha Entrega</th>
                             </tr>
                             <tr>
                                 <td>{{ $orden->id }}</td>
                                 <td>{{ $orden->fecha_Orden->format('d/m/Y') }}</td>
                                 <td>{{ $orden->fecha_Cita->format('d/m/Y') }}</td>
-                                <td>{{ $orden->descripcion }}</td>
-                                <td>{{ $orden->categoria->nombre_Categoria }}</td>
+                                <td>{{ $orden->cita->nombre_Cita }}</td>
                                 <td>
                                     @if ($orden->fecha_Entrega == null)
                                     Por Confirmar
@@ -33,7 +34,16 @@
                             </tr>
                             <tr>
                                 <td colspan="6">
-                                    Usuario: {{$orden->user->name}} ({{$orden->user->email}}) <br>
+                                    Datos del usuario: {{$orden->user->name}} Correo: {{$orden->user->email}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form action="{{ route('cita.destroy', $orden->id ) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
                                 </td>
                             </tr>
                         </table>
@@ -41,6 +51,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-5">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">Detalle del Perdido</div>
+                <div class="card-body">
+
+                    <hr>
+                    <table class="table">
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Descripción</th>
+                            <th>Estatus</th>
+                        </tr>
+                        <tr>
+                            <td>{{ $orden->categoria->nombre_Categoria }}</td>
+                            <td>{{ $orden->descripcion }}</td>
+                            <td>{{ $orden->estatus }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 @endsection

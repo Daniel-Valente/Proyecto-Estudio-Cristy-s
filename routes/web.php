@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('orden', 'OrdenController');
 
-Auth::routes();
+Route::resource('cita', 'CitaController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('pedido', 'PedidoController');
+
+Route::resource('pago', 'PagoController');

@@ -10,6 +10,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        <a href="{{ action('OrdenController@create') }}" class="btn btn-success btn-sm">Nueva Cita</a>
                         {{ $ordens->links() }}
                         <hr>
                         <table class="table">
@@ -21,17 +22,21 @@
                                 <th>Usuario</th>
                             </tr>
                             @foreach ($ordens as $orden)
-                                    <tr>
-                                        <td>{{ $orden->id }}</td>
-                                        <td>
-                                            <a href=" {{ route('orden.show', $orden->id) }} ">
-                                                {{ $orden->fecha_Orden->format('d/m/Y') }}
-                                            </a>
-                                        </td>
-                                        <td>{{ $orden->fecha_Cita->format('d/m/Y') }}</td>
-                                        <td>{{ $orden->cita->nombre_Cita }}</td>
-                                        <td>{{ $orden->user->name }}</td>
+                            @can('propietario', $orden)
+                            @if($orden->cita->nombre_Cita == "Programada")
+                                <tr>
+                                    <td>{{ $orden->id }}</td>
+                                    <td>
+                                        <a href=" {{ route('orden.show', $orden->id) }} ">
+                                            {{ $orden->fecha_Orden->format('d/m/Y') }}
+                                        </a>
+                                    </td>
+                                    <td>{{ $orden->fecha_Cita->format('d/m/Y') }}</td>
+                                    <td>{{ $orden->cita->nombre_Cita }}</td>
+                                    <td>{{ $orden->user->name }}</td>
                                     </tr>
+                            @endif
+                            @endcan
                             @endforeach
                         </table>
                     </div>

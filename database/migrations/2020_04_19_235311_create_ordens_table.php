@@ -15,16 +15,17 @@ class CreateOrdensTable extends Migration
     {
         Schema::create('ordens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('categoria_id');
             $table->unsignedBigInteger('cita_id')->unsigned()->nullable();
             $table->unsignedBigInteger('user_id');
-            //$table->unsignedBigInteger('pago_id')->unsigned()->null();
+            $table->unsignedBigInteger('categoria_id');
             $table->date('fecha_Orden');
             $table->date('fecha_Cita');
             $table->date('fecha_Entrega')->nullable();
             $table->string('descripcion');
-            //$table->string('estatus');
+            $table->string('estatus');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -59,8 +59,10 @@
         <!-- ======= About Me Section ======= -->
         <section class="hero-container">
             <div class="container">
-                @include('layouts.mensage')
-                @yield('content')
+                <section id="resume">
+                    @include('layouts.mensage')
+                    @yield('content')
+                </section>
             </div>
         </section><!-- End About Me Section -->
 

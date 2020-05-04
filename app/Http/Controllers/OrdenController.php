@@ -21,7 +21,7 @@ class OrdenController extends Controller
      */
     public function index()
     {
-        $ordens = Orden::with('user', 'categoria')->paginate(15);
+        $ordens = Orden::with('user', 'categoria', 'cita')->paginate(15);
         return view('ordens.ordenIndex', compact('ordens'));
     }
 
@@ -50,6 +50,7 @@ class OrdenController extends Controller
             'descripcion' => 'required|min:5'
         ]);
 
+        $request->merge(['estatus' => "Sin pagar"]);
         $request->merge(['cita_id' => '1']);
         $request->merge(['fecha_Orden' => date('Y-m-d')]);
         $request->merge(['user_id' => \Auth::id()]);
@@ -65,7 +66,10 @@ class OrdenController extends Controller
         else
             Orden::create($request->all());
 
-        return redirect()->route('orden.index');
+        return redirect()->route('cita.index')->with([
+            'mensaje' => 'Cita creada.',
+            'clase-alerta' => 'alert-success'
+            ]);;
     }
 
     /**
@@ -102,8 +106,7 @@ class OrdenController extends Controller
     {
         $request->validate([
             'fecha_Cita' => 'required|date',
-            'descripcion' => 'required|max:255',
-            'estatus' => 'required|max:255'
+            'descripcion' => 'required|max:255'
         ]);
 
         Orden::where('id', $orden->id)
@@ -121,6 +124,11 @@ class OrdenController extends Controller
     public function destroy(Orden $orden)
     {
         $orden->delete();
-        return redirect()->route('orden.index');
+
+        return redirect()->route('tarea.index')
+        ->with([
+        'mensaje' => 'Tarea eliminada.',
+        'clase-alerta' => 'alert-warning'
+        ]);
     }
 }

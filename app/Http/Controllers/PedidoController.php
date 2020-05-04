@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Pago;
+use App\Orden;
 use Illuminate\Http\Request;
 
-class PagoController extends Controller
+class PedidoController extends Controller
 {
     public function __construct()
     {
@@ -18,7 +18,8 @@ class PagoController extends Controller
      */
     public function index()
     {
-        return view('pagos.pagoShow');
+        $ordens = Orden::with('user', 'categoria', 'cita')->paginate(15);
+        return view('historials.pedidoIndex', compact('ordens'));
     }
 
     /**
@@ -45,21 +46,21 @@ class PagoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pago  $pago
+     * @param  \App\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function show(Pago $pago)
+    public function show(Orden $orden)
     {
-        return view('pagos.pagoShow');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pago  $pago
+     * @param  \App\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pago $pago)
+    public function edit(Orden $orden)
     {
         //
     }
@@ -68,10 +69,10 @@ class PagoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pago  $pago
+     * @param  \App\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pago $pago)
+    public function update(Request $request, Orden $orden)
     {
         //
     }
@@ -79,10 +80,10 @@ class PagoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pago  $pago
+     * @param  \App\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pago $pago)
+    public function destroy(Orden $orden)
     {
         //
     }

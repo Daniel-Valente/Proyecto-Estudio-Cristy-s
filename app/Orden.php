@@ -10,7 +10,7 @@ class Orden extends Model
         'categoria_id', 'user_id',
         'cita_id', 'fecha_Cita',
         'fecha_Orden', 'fecha_Entrega',
-        'descripcion'
+        'descripcion','estatus'
     ];
 
     protected $dates = ['fecha_Orden', 'fecha_Cita', 'fecha_Entrega', 'created_at', 'updated_at'];
