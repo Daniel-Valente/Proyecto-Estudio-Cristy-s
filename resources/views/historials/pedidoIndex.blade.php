@@ -21,7 +21,7 @@
                                 <th>Usuario</th>
                             </tr>
                                 @foreach ($ordens as $orden)
-                                @can('propietario', $orden)
+                                @can('view', $orden)
                                     <tr>
                                         <td>{{ $orden->id }}</td>
                                         <td>

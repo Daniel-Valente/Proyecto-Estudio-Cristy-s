@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Laura Bootstrap Template - Index</title>
+    <title>Estudio Cristy's</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
 
@@ -47,7 +47,7 @@
     @if(!\Auth::id())
     <section id="hero">
         <div class="hero-container">
-            <h1>Laura Thomson</h1>
+            <h1>ESTUDIO CRISTY'S</h1>
             <h2>I'm a Professional Photographer In New York City</h2>
             <a href="#resume" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
         </div>

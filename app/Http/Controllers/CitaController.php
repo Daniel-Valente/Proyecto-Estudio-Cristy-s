@@ -32,7 +32,9 @@ class CitaController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
+        $paquetes = Paquete::all()->pluck('nombre_Paquete', 'id');
+        return view('citas.citaForm', compact('categorias', 'paquetes'));
     }
 
     /**
@@ -43,7 +45,31 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'fecha_Cita' => 'required|date',
+            'descripcion' => 'required|min:5'
+        ]);
+
+        $request->merge(['estatus' => "Sin pagar"]);
+        $request->merge(['cita_id' => '1']);
+        $request->merge(['fecha_Orden' => date('Y-m-d')]);
+        $request->merge(['user_id' => \Auth::id()]);
+
+        if($request->fecha_Cita == $request->fecha_Orden)
+        {
+            $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
+            return redirect()->route('orden.create')->with([
+                'mensaje' => 'No puede solicitar la cita el mismo día de la orden.',
+                'clase-alerta' => 'alert-warning'
+                ]);
+        }
+        else
+            Orden::create($request->all());
+
+        return redirect()->route('cita.index')->with([
+            'mensaje' => 'Cita creada.',
+            'clase-alerta' => 'alert-success'
+            ]);;
     }
 
     /**
@@ -54,7 +80,7 @@ class CitaController extends Controller
      */
     public function show(Orden $orden)
     {
-
+        return view('ordens.ordenShow', compact('orden'));
     }
 
     /**
@@ -65,7 +91,8 @@ class CitaController extends Controller
      */
     public function edit(Orden $orden)
     {
-        //
+        $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
+        return view('ordens.ordenForm', compact('orden', 'categorias'));
     }
 
     /**
@@ -77,7 +104,15 @@ class CitaController extends Controller
      */
     public function update(Request $request, Orden $orden)
     {
+        $request->validate([
+            'fecha_Cita' => 'required|date',
+            'descripcion' => 'required|max:255'
+        ]);
 
+        Orden::where('id', $orden->id)
+            ->update($request->except('_token', '_method'));
+
+        return redirect()->route('orden.show', $orden->id);
     }
 
     /**

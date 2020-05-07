@@ -25,11 +25,11 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Usuario:</td>
+                                <td>Usuario: </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Factura: <a href="" class="btn btn-info btn-sm">Generar</a>
+                                    Factura: <a href="{{ route('Factura.pdf') }}" class="btn btn-info btn-sm">Generar</a>
 
                                 </td>
                             </tr>

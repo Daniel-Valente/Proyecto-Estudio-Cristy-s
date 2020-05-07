@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cita;
 use App\Orden;
 use App\Paquete;
 use App\Categoria;
@@ -28,7 +29,7 @@ class OrdenController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @r0eturn \Illuminate\Http\Response
      */
     public function create()
     {
@@ -92,7 +93,8 @@ class OrdenController extends Controller
     public function edit(Orden $orden)
     {
         $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
-        return view('ordens.ordenForm', compact('orden', 'categorias'));
+        $citas = Cita::all()->pluck('nombre_Cita', 'id');
+        return view('ordens.ordenForm', compact('orden', 'categorias', 'citas'));
     }
 
     /**
@@ -106,8 +108,12 @@ class OrdenController extends Controller
     {
         $request->validate([
             'fecha_Cita' => 'required|date',
-            'descripcion' => 'required|max:255'
+            'descripcion' => 'required|max:255',
         ]);
+        if($request->cita_id == 2)
+        {
+            $request->merge(['estatus' => "Cancelado"]);
+        }
 
         Orden::where('id', $orden->id)
             ->update($request->except('_token', '_method'));

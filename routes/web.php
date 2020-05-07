@@ -23,8 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('orden', 'OrdenController');
 
+Route::get('Factura-pdf', 'OrdenController@exportPdf')->name('Factura.pdf');
+
 Route::resource('cita', 'CitaController');
 
 Route::resource('pedido', 'PedidoController');
 
 Route::resource('pago', 'PagoController');
+
+Route::get('Factura-pdf', 'PagoController@exportPdf')->name('Factura.pdf');

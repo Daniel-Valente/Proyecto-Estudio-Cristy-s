@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pago;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PagoController extends Controller
 {
@@ -20,6 +21,15 @@ class PagoController extends Controller
     {
         return view('pagos.pagoShow');
     }
+
+    public function exportPdf()
+    {
+        $pagos = Pago::get();
+        $pdf = PDF::loadView('ordens.ordenShow', compact('pagos'));
+
+        return $pdf->download('Factura.pdf');
+    }
+
 
     /**
      * Show the form for creating a new resource.

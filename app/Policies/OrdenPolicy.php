@@ -18,11 +18,12 @@ class OrdenPolicy
      */
     public function viewAny(User $user)
     {
+        return $user->id == 21;
     }
 
-    public function propietario(User $user, orden $orden)
+    public function editar(User $user, Orden $orden)
     {
-        return $orden->user_id == $user->id;
+        return $orden->cita->nombre_Cita != "Cancelada";
     }
 
     /**
@@ -34,7 +35,7 @@ class OrdenPolicy
      */
     public function view(User $user, Orden $orden)
     {
-        //
+        return $orden->user_id == $user->id;
     }
 
     /**

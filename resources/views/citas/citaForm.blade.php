@@ -17,24 +17,20 @@
                     </div>
                     @endif
 
-                    @isset($orden)
-                        {!! Form::model($orden, ['route' => ['orden.update', $orden->id], 'method' => 'PATCH']) !!}
+                    @isset($cita)
+                        {!! Form::model($orden, ['route' => ['cita.update', $orden->id], 'method' => 'PATCH']) !!}
                     @else
-                        {!! Form::open(['route' => 'orden.store']) !!}
+                        {!! Form::open(['route' => 'cita.store']) !!}
                     @endisset ()
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="categoria">Categoria</label> <br>
                             {!! Form::select('categoria_id', $categorias ,null, ['class' => 'forn-control']) !!}
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="fecha_Cita">Fecha Cita</label>
                             {!! Form::date('fecha_Cita', isset($orden) ? $orden->fecha_Cita->toDateString() : null,
                             ['class' => 'form-control'])!!}
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="cita">Estatus De la Cita</label> <br>
-                            {!! Form::select('cita_id', $citas ,null, ['class' => 'forn-control']) !!}
                         </div>
                     </div>
                     <div class="form-group">

@@ -8,8 +8,12 @@
                 <div class="card-header py-3">Fecha del Pedido</div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-success btn-sm">Modificar</a>
-                        <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-info btn-sm">Pagar</a>
+                        @can('editar', $orden)
+                            <a href="{{ route('Factura.pdf') }}" class="btn btn-success btn-sm">Modificar</a>
+                            @can('view', $orden)
+                                <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-info btn-sm">Pagar</a>
+                            @endcan
+                        @endcan
                         <hr>
                         <table class="table">
                             <tr>
@@ -25,10 +29,14 @@
                                 <td>{{ $orden->fecha_Cita->format('d/m/Y') }}</td>
                                 <td>{{ $orden->cita->nombre_Cita }}</td>
                                 <td>
-                                    @if ($orden->fecha_Entrega == null)
-                                    Por Confirmar
+                                    @if($orden->cita->nombre_Cita == "Cancelada")
+                                        Cancelada
                                     @else
-                                    {{ $orden->fecha_Entrega->format('d/m/Y') }}
+                                        @if ($orden->fecha_Entrega == null)
+                                        Por Confirmar
+                                        @else
+                                        {{ $orden->fecha_Entrega->format('d/m/Y') }}
+                                        @endif
                                     @endif
                                 </td>
                             </tr>
@@ -39,7 +47,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <form action="{{ route('cita.destroy', $orden->id ) }}" method="POST">
+                                    <form action="{{ route('orden.destroy', $orden->id ) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>

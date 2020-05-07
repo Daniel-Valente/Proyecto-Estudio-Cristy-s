@@ -2,8 +2,13 @@
     <ul>
         @if(\Auth::id())
             <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="{{ route('cita.index') }}">Mi Cita</a></li>
-            @include('layouts.historial-menu')
+            @if (\Gate::allows('administrador'))
+            <li><a href="{{ route('orden.index') }}">pedidos</a></li>
+            <li><a href="{{ route('home') }}">Pagos</a></li>
+            @else
+                <li><a href="{{ route('cita.index') }}">Mi Cita</a></li>
+                @include('layouts.historial-menu')
+            @endif
             @include('layouts.user-menu')
         @else
             <li><a href="#resume">Resume</a></li>

@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <a href="{{ action('OrdenController@create') }}" class="btn btn-success btn-sm">Nueva Cita</a>
+                        <a href="{{ action('CitaController@create') }}" class="btn btn-success btn-sm">Nueva Cita</a>
                         {{ $ordens->links() }}
                         <hr>
                         <table class="table">
@@ -22,7 +22,7 @@
                                 <th>Usuario</th>
                             </tr>
                             @foreach ($ordens as $orden)
-                            @can('propietario', $orden)
+                            @can('view', $orden)
                             @if($orden->cita->nombre_Cita == "Programada")
                                 <tr>
                                     <td>{{ $orden->id }}</td>
