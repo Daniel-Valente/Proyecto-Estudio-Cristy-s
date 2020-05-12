@@ -29,6 +29,13 @@ Route::resource('cita', 'CitaController');
 
 Route::resource('pedido', 'PedidoController');
 
+Route::resource('galeria', 'GaleriaController');
+
+Route::post('galeria/cargar', 'GaleriaController@upload')->name('galeria.upload');
+
 Route::resource('pago', 'PagoController');
 
 Route::get('Factura-pdf', 'PagoController@exportPdf')->name('Factura.pdf');
+
+Route::post('/payment', 'PagoController@pay')->name('payment');
+

@@ -18,9 +18,9 @@
                     @endif
 
                     @isset($cita)
-                        {!! Form::model($orden, ['route' => ['cita.update', $orden->id], 'method' => 'PATCH']) !!}
+                        {!! Form::model($orden, ['route' => ['cita.update', $orden->id], 'method' => 'PATCH', 'role'=> 'form', 'class'=> 'php-email-form'] ) !!}
                     @else
-                        {!! Form::open(['route' => 'cita.store']) !!}
+                        {!! Form::open(['route' => 'cita.store', 'role'=> 'form', 'class'=> 'php-email-form']) !!}
                     @endisset ()
                     <div class="form-row">
                         <div class="form-group col-md-6">

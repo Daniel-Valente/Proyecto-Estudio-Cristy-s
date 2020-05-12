@@ -14,10 +14,12 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.5",
         "laravel/framework": "^7.0",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "laravelcollective/html": "^6.1",
         "laraveles/spanish": "^1.4",
-        "nesbot/carbon": "^2.33"
+        "nesbot/carbon": "^2.33",
+        "stripe/stripe-php": "^7.31"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

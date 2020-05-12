@@ -40,6 +40,12 @@ class User extends Authenticatable
 
     public function ordens()
     {
-        return $this->hasOne(Orden::class);
+        return $this->hasMany(Orden::class);
     }
+
+    public function galerias()
+    {
+        return $this->morphMany(Galeria::class);
+    }
+
 }

@@ -9,9 +9,9 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         @can('editar', $orden)
-                            <a href="{{ route('Factura.pdf') }}" class="btn btn-success btn-sm">Modificar</a>
+                            <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-success btn-sm">Modificar</a>
                             @can('view', $orden)
-                                <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-info btn-sm">Pagar</a>
+                                <a href="{{ route('pago.create', $orden->id ) }}" class="btn btn-info btn-sm">Pagar</a>
                             @endcan
                         @endcan
                         <hr>

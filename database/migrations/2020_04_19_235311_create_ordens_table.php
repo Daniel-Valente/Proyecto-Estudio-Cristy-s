@@ -15,9 +15,9 @@ class CreateOrdensTable extends Migration
     {
         Schema::create('ordens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('cita_id')->unsigned()->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('categoria_id');
+            $table->unsignedBigInteger('cita_id')->unsigned()->nullable();
             $table->date('fecha_Orden');
             $table->date('fecha_Cita');
             $table->date('fecha_Entrega')->nullable();
@@ -26,6 +26,8 @@ class CreateOrdensTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('cita_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('categoria_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -27,6 +27,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styleCliente.css') }}" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Laura - v2.0.0
@@ -72,7 +73,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
-            <h3>Laura Thomson</h3>
+            <h3>ESTUDIO CRISTY'S</h3>
             <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi
                 placeat.</p>
             <div class="social-links">
@@ -110,6 +111,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
+    @yield('scripts')
 
 </body>
 

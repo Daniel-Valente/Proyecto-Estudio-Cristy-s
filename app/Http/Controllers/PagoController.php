@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Orden;
 use App\Pago;
+use App\Categoria;
+use Stripe\Stripe;
+use Stripe\Charge;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -19,26 +23,32 @@ class PagoController extends Controller
      */
     public function index()
     {
-        return view('pagos.pagoShow');
+        $pagos = Pago::with('user', 'categoria', 'cita')->paginate(15);
+       return view('pagos.pagoIndex', compact('pagos'));
     }
 
     public function exportPdf()
     {
         $pagos = Pago::get();
-        $pdf = PDF::loadView('ordens.ordenShow', compact('pagos'));
+        $pdf = PDF::loadView('pagos.pagoFactura', compact('pagos'));
 
         return $pdf->download('Factura.pdf');
     }
 
+    public function pay(Request $request)
+    {
+
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Orden $orden)
     {
-        //
+        //dd($orden->all());
+        return view('pagos.pagoForm', compact('orden'));
     }
 
     /**
@@ -47,9 +57,29 @@ class PagoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Orden $orden)
     {
-        //
+        $request->validate([
+            'pago' => 'required'
+        ]);
+
+        dd($orden->all());
+        $request->merge(['orden_id' => $orden->id]);
+        $request->merge(['fecha_Pago' => date('Y-m-d')]);
+        $request->merge(['user_id' => \Auth::id()]);
+        dd($request->all());
+
+        Stripe::setApiKey(config('services.stripe.secret'));
+        $token = $request->stripeToken;
+
+        $charge = Charge::create([
+                'amount' => $request->pago,
+                'currency' => 'usd',
+                'description' => 'Example charge',
+                'source' => $token,
+        ]);
+
+        return redirect()->route('pago.update');
     }
 
     /**
@@ -69,9 +99,9 @@ class PagoController extends Controller
      * @param  \App\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pago $pago)
+    public function edit(Orden $orden)
     {
-        //
+
     }
 
     /**

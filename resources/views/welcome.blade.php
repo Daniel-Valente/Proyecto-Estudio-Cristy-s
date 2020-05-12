@@ -164,9 +164,9 @@
                                 </div>
 
                                 <ul id="portfolio-flters" class="d-flex justify-content-center">
-                                    <li data-filter="*" class="filter-active">All</li>
+                                    <li data-filter="*" class="filter-active">Todas</li>
                                     <li data-filter=".filter-app">App</li>
-                                    <li data-filter=".filter-card">Card</li>
+                                    <li data-filter=".filter-card">Tarjeta</li>
                                     <li data-filter=".filter-web">Web</li>
                                 </ul>
 
@@ -174,12 +174,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-1.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/plaza.jpg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>App 1</h4>
                                             <p>App</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/plaza.jpg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="App 1"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -189,12 +189,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-2.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/campo.jpeg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>Web 3</h4>
                                             <p>Web</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-2.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/campo.jpeg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="Web 3"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -204,12 +204,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-3.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/fuente 2.jpg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>App 2</h4>
                                             <p>App</p>
-                                            <a href=" {{ asset('img/portfolio/portfolio-3.jpg') }}"
+                                            <a href=" {{ asset('img/portfolio/fuente 2.jpg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="App 2"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -219,12 +219,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-4.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/fuente.jpg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>Card 2</h4>
                                             <p>Card</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-4.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/fuente.jpg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="Card 2"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -234,12 +234,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-5.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/musa.jpeg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>Web 2</h4>
                                             <p>Web</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-5.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/musa.jpeg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="Web 2"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -249,12 +249,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-6.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/naturaleza.jpeg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>App 3</h4>
                                             <p>App</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-6.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/naturaleza.jpeg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="App 3"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -264,12 +264,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-7.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/fuego.jpeg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>Card 1</h4>
                                             <p>Card</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-7.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/fuego.jpeg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="Card 1"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -279,12 +279,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-8.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/muñeco.jpeg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>Card 3</h4>
                                             <p>Card</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-8.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/muñeco.jpeg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="Card 3"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"
@@ -294,12 +294,12 @@
 
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                                         <div class="portfolio-img"><img
-                                                src="{{ asset('img/portfolio/portfolio-9.jpg') }}" class="img-fluid"
+                                                src="{{ asset('img/portfolio/mar 2.jpg') }}" class="img-fluid"
                                                 alt=""></div>
                                         <div class="portfolio-info">
                                             <h4>Web 3</h4>
                                             <p>Web</p>
-                                            <a href="{{ asset('img/portfolio/portfolio-9.jpg') }}"
+                                            <a href="{{ asset('img/portfolio/mar 2.jpg') }}"
                                                 data-gall="portfolioGallery" class="venobox preview-link"
                                                 title="Web 3"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" class="details-link"

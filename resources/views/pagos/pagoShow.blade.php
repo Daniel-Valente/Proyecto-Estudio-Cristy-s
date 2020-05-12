@@ -22,10 +22,19 @@
                                 <th>Restante</th>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td>{{ $pago->id }}</td>
+                                <td>{{ $pago->orden->fecha_Orden->format('d/m/Y') }}</td>
+                                <td>{{ $pago->fecha_Pago->format('d/m/Y') }}</td>
+                                <td>{{ $pago->estatus }}</td>
+                                <td>{{ $pago->categoria->nombre_Categoria }}</td>
+                                <td>{{ $pago->categoria->pago }}</td>
+                                <td>{{ $pago->pago }}</td>
+                                <td>{{ $pago->restante }}</td>
                             </tr>
                             <tr>
-                                <td>Usuario: </td>
+                                <td colspan="6">
+                                    USUARIO: {{$pago->user->name}} <br> Correo: {{$pago->user->email}}
+                                </td>
                             </tr>
                             <tr>
                                 <td>

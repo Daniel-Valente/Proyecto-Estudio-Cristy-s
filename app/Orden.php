@@ -20,6 +20,12 @@ class Orden extends Model
         return $this->belongsTo(User::class);
     }
 
+
+    public function pagos()
+    {
+        return $this->hasMany(Pago::class);
+    }
+
     public function categoria()
     {
         return $this->belongsTo(Categoria::class);

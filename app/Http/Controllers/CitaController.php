@@ -33,8 +33,7 @@ class CitaController extends Controller
     public function create()
     {
         $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
-        $paquetes = Paquete::all()->pluck('nombre_Paquete', 'id');
-        return view('citas.citaForm', compact('categorias', 'paquetes'));
+        return view('citas.citaForm', compact('categorias'));
     }
 
     /**
@@ -57,8 +56,8 @@ class CitaController extends Controller
 
         if($request->fecha_Cita == $request->fecha_Orden)
         {
-            $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
-            return redirect()->route('orden.create')->with([
+            $categorias = Categoria::all()->pluck('precio','nombre_Categoria', 'id');
+            return redirect()->route('cita.create')->with([
                 'mensaje' => 'No puede solicitar la cita el mismo día de la orden.',
                 'clase-alerta' => 'alert-warning'
                 ]);
@@ -69,7 +68,7 @@ class CitaController extends Controller
         return redirect()->route('cita.index')->with([
             'mensaje' => 'Cita creada.',
             'clase-alerta' => 'alert-success'
-            ]);;
+            ]);
     }
 
     /**
@@ -91,6 +90,7 @@ class CitaController extends Controller
      */
     public function edit(Orden $orden)
     {
+        dd($orden->categoria_id);
         $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
         return view('ordens.ordenForm', compact('orden', 'categorias'));
     }

@@ -8,6 +8,10 @@ class Categoria extends Model
 {
     public $timestamps = false;
 
+    public function galerias()
+    {
+        return $this->morphMany(Galeria::class);
+    }
     public function ordens()
     {
         return $this->hasMany(Orden::class);

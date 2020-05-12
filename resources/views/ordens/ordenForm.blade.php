@@ -24,7 +24,7 @@
                     @endisset ()
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="categoria">Categoria</label> <br>
+                            <label for="categoria">Categoria</label>
                             {!! Form::select('categoria_id', $categorias ,null, ['class' => 'forn-control']) !!}
                         </div>
                         <div class="form-group col-md-4">
@@ -33,8 +33,8 @@
                             ['class' => 'form-control'])!!}
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="cita">Estatus De la Cita</label> <br>
-                            {!! Form::select('cita_id', $citas ,null, ['class' => 'forn-control']) !!}
+                            <label for="categoria">Cita</label> <br>
+                            {!! Form::select('Cita_id', $citas ,null, ['class' => 'forn-control']) !!}
                         </div>
                     </div>
                     <div class="form-group">
