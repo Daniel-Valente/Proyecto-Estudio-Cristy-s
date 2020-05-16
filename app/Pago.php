@@ -9,11 +9,10 @@ class Pago extends Model
     protected $fillable = [
         'orden_id', 'user_id',
         'pago', 'fecha_Pago',
+        'restante', 'estatus',
     ];
 
-    protected $dates = ['fecha_Pago'];
-
-    public $timestamps = false;
+    protected $dates = ['fecha_Pago', 'created_at', 'updated_at'];
 
     public function orden()
     {

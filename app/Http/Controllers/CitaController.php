@@ -90,7 +90,6 @@ class CitaController extends Controller
      */
     public function edit(Orden $orden)
     {
-        dd($orden->categoria_id);
         $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
         return view('ordens.ordenForm', compact('orden', 'categorias'));
     }

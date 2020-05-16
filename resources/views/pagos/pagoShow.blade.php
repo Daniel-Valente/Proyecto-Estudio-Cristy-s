@@ -26,27 +26,20 @@
                                 <td>{{ $pago->orden->fecha_Orden->format('d/m/Y') }}</td>
                                 <td>{{ $pago->fecha_Pago->format('d/m/Y') }}</td>
                                 <td>{{ $pago->estatus }}</td>
-                                <td>{{ $pago->categoria->nombre_Categoria }}</td>
-                                <td>{{ $pago->categoria->pago }}</td>
+                                <td>{{ $pago->orden->categoria->nombre_Categoria }}</td>
+                                <td>{{ $pago->orden->categoria->precio }}</td>
                                 <td>{{ $pago->pago }}</td>
                                 <td>{{ $pago->restante }}</td>
                             </tr>
                             <tr>
                                 <td colspan="6">
-                                    USUARIO: {{$pago->user->name}} <br> Correo: {{$pago->user->email}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Factura: <a href="{{ route('Factura.pdf') }}" class="btn btn-info btn-sm">Generar</a>
-
+                                    Nombre del Usuario: {{$pago->orden->user->name}} <br> Correo del Usuario: {{$pago->orden->user->email}}
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

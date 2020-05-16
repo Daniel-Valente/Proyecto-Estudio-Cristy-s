@@ -6,28 +6,24 @@
         <div class="col-md-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Mis Pagos</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Usuarios</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <hr>
                         <table class="table">
                             <tr>
                                 <th>ID</th>
-                                <th>Fecha Pedido</th>
-                                <th>Fecha Pago</th>
-                                <th>Usuario</th>
-                            </tr>
-                            @foreach ($pagos as $pago)
-                            <tr>
-                                <td>{{ $pago->id }}</td>
-                                <td>{{ $pago->orden->fecha_Orden->format('d/m/Y') }}</td>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                            @foreach ($users as $user)
+                             <tr>
+                                <td>{{ $user->id }}</td>
                                 <td>
-                                    <a href=" {{ route('pago.show', $pago->id) }} ">
-                                        {{ $pago->fecha_Pago->format('d/m/Y') }}
+                                    <a href=" {{ route('perfil.show', $user->id) }} ">
+                                        {{ $user->name }}
                                     </a>
                                 </td>
-                                <td>{{ $pago->orden->user->name }}</td>
+                                <td>{{ $user->email }}</td>
                             </tr>
                             @endforeach
                         </table>

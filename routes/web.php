@@ -21,21 +21,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('orden', 'OrdenController');
+Route::resource('orden', 'OrdenController')->middleware('auth');
 
-Route::get('Factura-pdf', 'OrdenController@exportPdf')->name('Factura.pdf');
+Route::resource('pago', 'PagoController')->middleware('auth');
 
-Route::resource('cita', 'CitaController');
+Route::get('Factura-pdf','PagoController@exportPdf')->name('Factura.pdf')->middleware('auth');
 
-Route::resource('pedido', 'PedidoController');
+Route::resource('orden.pago', 'OrdenPagoController')->middleware('auth');
 
-Route::resource('galeria', 'GaleriaController');
+Route::resource('cita', 'CitaController')->middleware('auth');;
+
+Route::resource('pedido', 'PedidoController')->middleware('auth');;
+
+Route::resource('galeria', 'GaleriaController')->middleware('auth');;
+
+Route::resource('perfil', 'PerfilController')->middleware('auth');;
 
 Route::post('galeria/cargar', 'GaleriaController@upload')->name('galeria.upload');
-
-Route::resource('pago', 'PagoController');
-
-Route::get('Factura-pdf', 'PagoController@exportPdf')->name('Factura.pdf');
-
-Route::post('/payment', 'PagoController@pay')->name('payment');
 

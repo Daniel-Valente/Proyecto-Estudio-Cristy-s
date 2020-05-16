@@ -18,7 +18,7 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        $galerias = Galeria::with('user')->paginate(15);
+        $galerias = Galeria::with('user', 'categoria')->paginate(15);
         return view('galerias.galeriaIndex', compact('galerias'));
     }
 
@@ -29,7 +29,8 @@ class GaleriaController extends Controller
      */
     public function create()
     {
-        return view('galerias.galeriaForm');
+        $categorias = Categoria::all()->pluck('nombre_Categoria', 'id');
+        return view('galerias.galeriaForm', compact('categorias'));
     }
 
     /**

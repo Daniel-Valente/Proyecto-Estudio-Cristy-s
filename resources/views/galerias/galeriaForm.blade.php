@@ -19,7 +19,10 @@
                     {!! Form::open(['route' => 'galeria.upload', 'enctype' => 'multipart/form-data', 'method' =>
                     'POST']) !!}
                     @csrf
-
+                    <div class="form-group col-md-4">
+                        <label for="categoria">Categoria</label>
+                        {!! Form::select('categoria_id', $categorias ,null, ['class' => 'forn-control']) !!}
+                    </div>
                     <div class="form-group">
                         <label for="mi_archivo">Cargar Fotografía</label>
                         {!! Form::file('mi_archivo') !!}

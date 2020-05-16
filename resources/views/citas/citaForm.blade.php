@@ -17,10 +17,10 @@
                     </div>
                     @endif
 
-                    @isset($cita)
+                    @isset($orden)
                         {!! Form::model($orden, ['route' => ['cita.update', $orden->id], 'method' => 'PATCH', 'role'=> 'form', 'class'=> 'php-email-form'] ) !!}
                     @else
-                        {!! Form::open(['route' => 'cita.store', 'role'=> 'form', 'class'=> 'php-email-form']) !!}
+                        {!! Form::open(['route' => 'cita.store']) !!}
                     @endisset ()
                     <div class="form-row">
                         <div class="form-group col-md-6">

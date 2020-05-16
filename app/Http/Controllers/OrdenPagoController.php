@@ -4,107 +4,111 @@ namespace App\Http\Controllers;
 
 use App\Orden;
 use App\Pago;
-use App\Categoria;
 use Stripe\Stripe;
 use Stripe\Charge;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade as PDF;
 
-class PagoController extends Controller
+class OrdenPagoController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except('index');
-    }
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Orden $orden)
     {
-        $pagos = Pago::get();
-       return view('pagos.pagoIndex', compact('pagos'));
+
     }
 
-    public function exportPdf()
-    {
-        $pagos = Pago::get();
-
-        $pdf = PDF::loadView('pagos.pagoFactura', compact('pagos'));
-
-        return $pdf->download('Factura.pdf');
-    }
     /**
      * Show the form for creating a new resource.
      *
+     * @param  \App\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Orden $orden)
     {
-        //dd($orden->all());
-        return view('pagos.pagoForm');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Orden $orden)
     {
         $request->validate([
-            'pago' => 'required'
+        'pago' => 'numeric|min:10',
+        'nombre' => 'required',
+        'apellido' => 'required',
+        'correo' => 'required'
         ]);
+        $request->merge(['restante' => ($orden->categoria->precio-$request->pago)]);
+
+        if($request->restante > 0)
+            $request->merge(['estatus' => 'abono']);
+        else
+        {
+            $request->merge(['restante' => 0]);
+            $request->merge(['estatus' => 'pagado']);
+        }
 
         $request->merge(['fecha_Pago' => date('Y-m-d')]);
         $request->merge(['user_id' => \Auth::id()]);
-        dd($request->all());
 
         Stripe::setApiKey(config('services.stripe.secret'));
         $token = $request->stripeToken;
 
         $charge = Charge::create([
-                'amount' => $request->pago,
-                'currency' => 'usd',
+                'amount' => 1000,
+                'currency' => 'mxn',
                 'description' => 'Example charge',
                 'source' => $token,
         ]);
 
-        return redirect()->route('pago.update');
+        $orden->pagos()->create($request->except('nombre','apellido','correo'));
+
+        return redirect()->route('orden.show', $orden->id)
+            ->with(['mensaje' => 'Pago Realizado']);
     }
 
     /**
      * Display the specified resource.
      *
+     * @param  \App\Orden  $orden
      * @param  \App\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function show(Pago $pago)
+    public function show(Orden $orden, Pago $pago)
     {
-        return view('pagos.pagoShow', compact('pago'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
+     * @param  \App\Orden  $orden
      * @param  \App\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orden $orden)
+    public function edit(Orden $orden, Pago $pago)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Orden  $orden
      * @param  \App\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pago $pago)
+    public function update(Request $request, Orden $orden, Pago $pago)
     {
         //
     }
@@ -112,10 +116,11 @@ class PagoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  \App\Orden  $orden
      * @param  \App\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pago $pago)
+    public function destroy(Orden $orden, Pago $pago)
     {
         //
     }

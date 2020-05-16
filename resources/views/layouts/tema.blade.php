@@ -27,7 +27,6 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styleCliente.css') }}" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Laura - v2.0.0

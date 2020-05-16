@@ -16,7 +16,6 @@ class CreatePaquetesTable extends Migration
         Schema::create('paquetes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre_Paquete');
-            $table->timestamps();
         });
     }
 

@@ -4,7 +4,7 @@
     </a>
     <ul>
         <li>
-            <a class="dropdowm-item" href="{{ route('galeria.index') }}">
+            <a class="dropdowm-item" href="{{ route('perfil.index') }}">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Mi Perfil
             </a>

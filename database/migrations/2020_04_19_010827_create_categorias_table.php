@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrdensPagosTable extends Migration
+class CreateCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateOrdensPagosTable extends Migration
      */
     public function up()
     {
-        Schema::create('ordens_pagos', function (Blueprint $table) {
-            $table->unsignedBigInteger('orden_id');
-            $table->unsignedBigInteger('pago_id');
+        Schema::create('categorias', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nombre_Categoria');
+            $table->double('precio');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateOrdensPagosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ordens_pagos');
+        Schema::dropIfExists('categorias');
     }
 }

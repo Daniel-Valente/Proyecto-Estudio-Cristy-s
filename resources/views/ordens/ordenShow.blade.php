@@ -1,6 +1,8 @@
 @extends('layouts.tema')
 
 @section('content')
+@include('pagos.pagoForm')
+
 <div class="container">
     <div class="row">
         <div class="col-md-7">
@@ -11,7 +13,9 @@
                         @can('editar', $orden)
                             <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-success btn-sm">Modificar</a>
                             @can('view', $orden)
-                                <a href="{{ route('pago.create', $orden->id ) }}" class="btn btn-info btn-sm">Pagar</a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pagoModal">
+                                Pagar
+                              </button>
                             @endcan
                         @endcan
                         <hr>

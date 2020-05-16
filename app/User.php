@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'descripcion', 'password',
     ];
 
     /**
@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function galerias()
     {
-        return $this->morphMany(Galeria::class);
+        return $this->hasMany(Galeria::class);
     }
 
 }

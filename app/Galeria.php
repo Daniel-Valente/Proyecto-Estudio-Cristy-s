@@ -8,8 +8,7 @@ class Galeria extends Model
 {
     protected $fillable = [
         'user_id', 'categoria_id',
-        'nombre_hash', 'nombre_original',
-        'tamaño', 'mime'
+        'nombre_hash', 'nombre_original'
     ];
 
     public $timestamps = false;
@@ -21,11 +20,11 @@ class Galeria extends Model
 
     public function user()
     {
-        return $this->morphTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function categoria()
     {
-        return $this->morphTo(Categoria::class);
+        return $this->belongsTo(Categoria::class);
     }
 }
