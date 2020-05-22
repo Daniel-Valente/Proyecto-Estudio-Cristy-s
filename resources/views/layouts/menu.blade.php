@@ -1,10 +1,10 @@
-<nav class="nav-menu d-none d-lg-block">
+<nav class="nav-menu d-none navbar-expand-lg d-lg-block">
     <ul>
         @if(\Auth::id())
-            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('home') }}">Inicio</a></li>
             @if (\Gate::allows('administrador'))
-            <li><a href="{{ route('orden.index') }}">pedidos</a></li>
-            <li><a href="{{ route('home') }}">Pagos</a></li>
+            <li><a href="{{ route('orden.index') }}">Pedidos</a></li>
+            <li><a href="{{ route('pagosIndex') }}">Pagos</a></li>
             @else
                 <li><a href="{{ route('cita.index') }}">Mi Cita</a></li>
                 @include('layouts.historial-menu')

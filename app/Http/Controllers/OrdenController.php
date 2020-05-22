@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Cita;
+use App\Pago;
 use App\Orden;
-use App\Paquete;
 use App\Categoria;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Auth;
 
 class OrdenController extends Controller
@@ -24,6 +25,21 @@ class OrdenController extends Controller
     {
         $ordens = Orden::with('user', 'categoria', 'cita')->paginate(15);
         return view('ordens.ordenIndex', compact('ordens'));
+    }
+
+    public function pagoIndex()
+    {
+        $pagos = Pago::get();
+       return view('pagos.pagoIndex', compact('pagos'));
+    }
+
+    public function exportPdf()
+    {
+        $ordenes = Orden::get();
+
+        $pdf = PDF::loadView('ordens.ordenFactura', compact('ordenes'));
+
+        return $pdf->download('FacturaOrdenes.pdf');
     }
 
     /**

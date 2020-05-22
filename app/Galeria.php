@@ -8,7 +8,8 @@ class Galeria extends Model
 {
     protected $fillable = [
         'user_id', 'categoria_id',
-        'nombre_hash', 'nombre_original'
+        'nombre_original', 'nombre_hash',
+        'tamaño', 'mime'
     ];
 
     public $timestamps = false;

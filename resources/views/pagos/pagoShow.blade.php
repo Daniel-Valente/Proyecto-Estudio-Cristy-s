@@ -37,6 +37,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <a href="{{ route('Factura.pdf', $pago->id) }}" class="btn btn-info btn-sm">Factura</a>
                     </div>
                 </div>
             </div>

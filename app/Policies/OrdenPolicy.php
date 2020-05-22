@@ -18,13 +18,24 @@ class OrdenPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->id == 21;
+        return $user->id == \Auth::user()->id;
     }
 
     public function editar(User $user, Orden $orden)
     {
         return $orden->cita->nombre_Cita != "Cancelada";
     }
+
+    public function completada(User $user, Orden $orden)
+    {
+        return $orden->fecha_Entrega == null;
+    }
+
+    public function pagado(User $user, Orden $orden)
+    {
+        return $orden->estatus != "Pagado";
+    }
+
 
     /**
      * Determine whether the user can view the model.

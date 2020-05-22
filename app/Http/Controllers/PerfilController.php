@@ -61,8 +61,29 @@ class PerfilController extends Controller
     {
         $user = User::find($id);
 
-        User::where('id', $user->id)
-            ->update($request->except('_token', '_method'));
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'avatar' => 'required'
+        ]);
+
+        $entrada=$request->all();
+
+        if($archivo=$request->file('avatar'))
+        {
+            $nombre = $archivo->getClientOriginalName();
+
+            $archivo->move('images', $nombre);
+
+            $entrada['avatar'] = $nombre;
+        }
+        $request = $entrada;
+
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->descripcion = $request['descripcion'];
+        $user->avatar = $request['avatar'];
+        $user->save();
 
         return redirect()->route('perfil.index');
     }

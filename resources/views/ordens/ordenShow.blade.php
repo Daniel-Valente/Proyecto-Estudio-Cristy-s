@@ -2,6 +2,7 @@
 
 @section('content')
 @include('pagos.pagoForm')
+@include('contact')
 
 <div class="container">
     <div class="row">
@@ -11,12 +12,16 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         @can('editar', $orden)
-                            <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-success btn-sm">Modificar</a>
-                            @can('view', $orden)
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pagoModal">
-                                Pagar
-                              </button>
+                            @can('completada', $orden)
+                                <a href="{{ route('orden.edit', $orden->id ) }}" class="btn btn-success btn-sm">Modificar</a>
                             @endcan
+                            @if(!\Gate::allows('administrador'))
+                                @can('pagado', $orden)
+                                    <button type="button"  class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#pagoModal">
+                                        Pagar
+                                    </button>
+                                @endcan
+                            @endif
                         @endcan
                         <hr>
                         <table class="table">
@@ -54,7 +59,7 @@
                                     <form action="{{ route('orden.destroy', $orden->id ) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        <button type="submit" class="btn btn-danger  btn-sm">Eliminar</button>
                                     </form>
                                 </td>
                             </tr>
@@ -68,16 +73,20 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">Detalle del Perdido</div>
                 <div class="card-body">
-
+                    <button type="button"  class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#contactoModal">
+                        Contactar Estudio
+                    </button>
                     <hr>
-                    <table class="table">
+                    <table class="table" >
                         <tr>
-                            <th>Categoría</th>
+                            <th>Tipo de Foto</th>
+                            <th>Precio</th>
                             <th>Descripción</th>
                             <th>Estatus</th>
                         </tr>
                         <tr>
                             <td>{{ $orden->categoria->nombre_Categoria }}</td>
+                            <td>${{ $orden->categoria->precio }}</td>
                             <td>{{ $orden->descripcion }}</td>
                             <td>{{ $orden->estatus }}</td>
                         </tr>

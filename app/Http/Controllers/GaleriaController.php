@@ -48,8 +48,11 @@ class GaleriaController extends Controller
         $request->validate([
             'mi_archivo' => 'required'
         ]);
-
         $request->merge(['user_id' => \Auth::id()]);
+
+        $request->merge(['nombre_hash' => $request->file('mi_archivo')->store('archivos_cargados')]);
+        $request->merge(['mime' => $request->file('mi_archivo')->getClientMimeType()]);
+        $request->merge(['tamaño' => $request->file('mi_archivo')->getMaxFilesize()]);
 
         $entrada=$request->all();
 
@@ -62,54 +65,36 @@ class GaleriaController extends Controller
             $entrada['nombre_original'] = $nombre;
         }
 
-        Galeria::create($entrada);
+        Galeria::create([
+            'user_id' => $entrada['user_id'],
+            'categoria_id' => $entrada['categoria_id'],
+            'nombre_original' => $entrada['nombre_original'],
+            'nombre_hash' => $entrada['nombre_hash'],
+            'mime' => $entrada['mime'],
+            'tamaño' => $entrada['tamaño'],
+        ]);
 
         return redirect()->route('galeria.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Galeria  $galeria
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Galeria $galeria)
+    public function download(Galeria $galeria)
     {
-        //
+        //Obtiene ruta del archivo
+        $rutaArchivo = storage_path('app/' . $galeria->nombre_hash);
+
+        //La respuesta contiene el archivo con el tipo de documento
+        return response()->download($rutaArchivo, $galeria->nombre_original, ['Content-Type' => $galeria->mime]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Galeria  $galeria
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Galeria $galeria)
+    public function delete(Galeria $galeria)
     {
-        //
+        //Verifica la existencia del archivo
+        if (\Storage::exists($galeria->nombre_hash)) {
+            \Storage::delete($galeria->nombre_hash); //Elimina archivo
+            $galeria->delete(); //Elimina registro en tabla
+        }
+
+        return redirect()->back();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Galeria  $galeria
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Galeria $galeria)
-    {
-        //
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Galeria  $galeria
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Galeria $galeria)
-    {
-        //
-    }
 }

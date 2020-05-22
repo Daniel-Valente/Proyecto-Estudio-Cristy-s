@@ -18,7 +18,7 @@ class OrdenPagoController extends Controller
      */
     public function index(Orden $orden)
     {
-
+        //
     }
 
     /**

@@ -18,6 +18,9 @@ class CreateGaleriasTable extends Migration
             $table->foreignId('user_id');
             $table->foreignId('categoria_id');
             $table->string('nombre_original');
+            $table->string('nombre_hash');
+            $table->string('mime');
+            $table->string('tamaño');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias');

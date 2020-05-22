@@ -17,25 +17,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 Route::resource('orden', 'OrdenController')->middleware('auth');
 
+Route::get('FacturaOrdenes-pdf','OrdenController@exportPdf')->name('FacturaOrdenes.pdf')->middleware('auth');
+
+Route::get('pagos', 'OrdenController@pagoIndex')->name('pagosIndex')->middleware('auth');
+
 Route::resource('pago', 'PagoController')->middleware('auth');
 
-Route::get('Factura-pdf','PagoController@exportPdf')->name('Factura.pdf')->middleware('auth');
+Route::get('Factura-pdf/{pago}','PagoController@exportPdf')->name('Factura.pdf')->middleware('auth');
 
 Route::resource('orden.pago', 'OrdenPagoController')->middleware('auth');
 
-Route::resource('cita', 'CitaController')->middleware('auth');;
+Route::resource('cita', 'CitaController')->middleware('auth');
 
-Route::resource('pedido', 'PedidoController')->middleware('auth');;
+Route::resource('pedido', 'PedidoController')->middleware('auth');
 
-Route::resource('galeria', 'GaleriaController')->middleware('auth');;
+Route::resource('galeria', 'GaleriaController')->middleware('auth');
 
-Route::resource('perfil', 'PerfilController')->middleware('auth');;
+Route::get('galeria/{galeria}/descargar', 'GaleriaController@download')->name('galeria.download')->middleware('auth');
 
-Route::post('galeria/cargar', 'GaleriaController@upload')->name('galeria.upload');
+Route::post('galeria/{galeria}/borrar', 'GaleriaController@delete')->name('galeria.delete')->middleware('auth');
 
+Route::resource('perfil', 'PerfilController')->middleware('auth');
+
+Route::post('galeria/cargar', 'GaleriaController@upload')->name('galeria.upload')->middleware('auth');
+
+Route::post('/contacto', 'MessagesController@store')->name('messages.store')->middleware('auth');

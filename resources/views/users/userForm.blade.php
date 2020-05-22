@@ -20,7 +20,9 @@
                         <h3>
                             <div class="form-row  justify-content-center">
                                 <div class="form-group col-md-12">
-                                    <img src=" {{ asset('img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
+                                    <label for="avatar">Cambiar Imagen</label><br>
+                                    <img src=" {{ asset('img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt=""><br>
+                                    {!! Form::file('avatar') !!}
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="name">Nombre</label>

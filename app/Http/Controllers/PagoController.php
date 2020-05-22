@@ -24,12 +24,12 @@ class PagoController extends Controller
     public function index()
     {
         $pagos = Pago::get();
-       return view('pagos.pagoIndex', compact('pagos'));
+       return view('historials.facturaIndex', compact('pagos'));
     }
 
-    public function exportPdf()
+    public function exportPdf($id)
     {
-        $pagos = Pago::get();
+        $pagos = Pago::find($id);
 
         $pdf = PDF::loadView('pagos.pagoFactura', compact('pagos'));
 
