@@ -12,7 +12,11 @@
                                 <div id="btn"></div>
                                 <button type="button" class="toggle-btn" onclick="login()">Acceder</button>
                                 <button type="button" class="toggle-btn" onclick="register()" h>Log In</button>
-                            </div><ul class="nav">
+                            </div>
+                            <div class="social-icons">
+                                <a href="login/twitter"><img src="{{ asset('img/twitter.png') }}"></a>
+                                <a href="login/github"><img src="{{ asset('img/github.png') }}"></a>
+                            </div>
                             <form method="POST" action="{{ route('login') }}" id="login" class="input-group">
                                 @csrf
                                 <div class="form-group row">

@@ -162,6 +162,18 @@ a{
     transition: .5s;
 }
 
+.social-icons{
+    margin: 30px auto;
+    text-align: center;
+}
+
+.social-icons img{
+    width: 30px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
 .input-group{
     top: 180px;
     position: absolute;

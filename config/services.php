@@ -34,4 +34,22 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID' , '1a31f8e10a22213fc89c'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET', '0cafab9347aa26b9ee67098f823e46544a6d2d64'),
+        'redirect' => 'http://proyecto.test:8080/login/github/callback',
+    ],
+
+    'twitter' => [
+        'client_id' => env('GITHUB_CLIENT_ID' , 'FCyqzX8muSvtQHpR0HvwCtAJY'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET', 'AvFdJsnili94Cyw8eOsNRMcJIyz6SI9ISkcKHKBXkNeEcCyuFT'),
+        'redirect' => 'http://proyecto.test:8080/login/twitter/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => env('GITHUB_CLIENT_ID' , '2612939492319756'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET', 'fdee1f468ccda11381dc84434f22c013'),
+        'redirect' => 'http://proyecto.test:8080/login/facebook/callback',
+    ],
 ];

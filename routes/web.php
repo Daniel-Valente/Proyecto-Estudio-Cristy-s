@@ -48,3 +48,15 @@ Route::resource('perfil', 'PerfilController')->middleware('auth');
 Route::post('galeria/cargar', 'GaleriaController@upload')->name('galeria.upload')->middleware('auth');
 
 Route::post('/contacto', 'MessagesController@store')->name('messages.store')->middleware('auth');
+
+Route::get('/login/{provider}', 'SocialAuthController@redirectToProvider');
+
+Route::get('/login/{provider}/callback', 'SocialAuthController@handleProviderCallback');
+
+Route::get('/usersJson', 'ApiController@index')->name('usersJson')->middleware('auth');
+
+Route::get('email-test', function(){
+    $details['email'] = 'Cristy@estudiocristys.com';
+    dispatch(new App\Jobs\SendEmailJob($details));
+    dd('done');
+});

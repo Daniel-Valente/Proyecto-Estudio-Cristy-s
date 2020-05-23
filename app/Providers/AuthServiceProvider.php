@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('administrador', function() {
-            if (\Auth::id() == 22) {
+            if (\Auth::id() == 1) {
                 return true;
             }
             else{

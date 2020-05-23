@@ -48,7 +48,7 @@
     <section id="hero">
         <div class="hero-container">
             <h1>ESTUDIO CRISTY'S</h1>
-            <h2>I'm a Professional Photographer In New York City</h2>
+            <h2>Tu mejor opción en fotografía</h2>
             <a href="#resume" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
         </div>
     </section><!-- End Hero -->
@@ -73,8 +73,7 @@
     <footer id="footer">
         <div class="container">
             <h3>ESTUDIO CRISTY'S</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi
-                placeat.</p>
+            <p>Los expertos en fotografía.</p>
             <div class="social-links">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>

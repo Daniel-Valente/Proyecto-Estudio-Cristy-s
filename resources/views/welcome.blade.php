@@ -18,80 +18,70 @@
                             <div class="container">
 
                                 <div class="section-title">
-                                    <span>My Resume</span>
-                                    <h2>My Resume</h2>
-                                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                                    <span>Nuestra Historia</span>
+                                    <h2>Nuestra Historia</h2>
+                                    <p>¿Quiénes somos?</p>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <h3 class="resume-title">Sumary</h3>
+                                        <h3 class="resume-title">Comienzo</h3>
                                         <div class="resume-item pb-0">
-                                            <h4>Alice Barkley</h4>
-                                            <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of
-                                                    experience designing and developing user-centered digital/print
-                                                    marketing material from initial concept to final, polished
-                                                    deliverable.</em></p>
+                                            <h4>Estudio Cristy's</h4>
+                                            <p><em>Estudio Cristy's es una empresa familiar fundada en Jalisco, durante el años de 1970.</em></p>
                                             <p>
                                                 <ul>
-                                                    <li>Portland par 127,Orlando, FL</li>
-                                                    <li>(123) 456-7891</li>
-                                                    <li>alice.barkley@example.com</li>
+                                                    <li>Originaria de la Ciudad de Lagos de Moreno</li>
+                                                    <li>Contacto:333825-0702</li>
+                                                    <li>estudiocristyprogra@gmail.com</li>
                                                 </ul>
                                             </p>
                                         </div>
 
-                                        <h3 class="resume-title">Education</h3>
+                                        <h3 class="resume-title">Inicios</h3>
                                         <div class="resume-item">
-                                            <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                                            <h5>2015 - 2016</h5>
-                                            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                                            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto
-                                                autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti
-                                                sand markend</p>
+                                            <h4>Inaguración &amp; Comienzo de este historia</h4>
+                                            <h5>1970</h5>
+                                            <p><em>En Lagos de Moreno, Jalisco, México.</em></p>
+                                            <p>Empresa de familiar fundada en Lagos de Moreno, Jalisco.</p>
                                         </div>
                                         <div class="resume-item">
-                                            <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                                            <h5>2010 - 2014</h5>
-                                            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                                            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis
-                                                et quis Eius vel ratione eius unde vitae rerum voluptates asperiores
-                                                voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
+                                            <h4>Crecimiento Profesional &amp; Alcance</h4>
+                                            <h5>1975</h5>
+                                            <p><em>Se abre una sucursal en San Juan de los Lagos, Jalisco.</em></p>
+                                            <h5>1982</h5>
+                                            <p><em>Se abre una la sucursal de Jalostotitlán, Jalisco.</em></p>
+                                            <h5>1986</h5>
+                                            <p><em>Se abre la primera sucursal en Guadalajara en la Av. Hidalgo 1102, Jalisco.</em></p>
+                                            <h5>1987</h5>
+                                            <p><em>Se abre una segunda sucursal de Guadalajara en la calle Álvaro Obregón 418, Jalisco.</em></p>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <h3 class="resume-title">Professional Experience</h3>
+                                        <h3 class="resume-title">Formación Profesional</h3>
                                         <div class="resume-item">
-                                            <h4>Senior graphic design specialist</h4>
-                                            <h5>2019 - Present</h5>
-                                            <p><em>Experion, New York, NY </em></p>
+                                            <h4>Experiencia en el campo desde:</h4>
+                                            <h5>1970</h5>
+                                            <p><em>En Lagos de Moreno, Jalisco, México. </em></p>
                                             <p>
                                                 <ul>
-                                                    <li>Lead in the design, development, and implementation of the
-                                                        graphic, layout, and production communication materials</li>
-                                                    <li>Delegate tasks to the 7 members of the design team and provide
-                                                        counsel on all aspects of the project. </li>
-                                                    <li>Supervise the assessment of all graphic materials in order to
-                                                        ensure quality and accuracy of the design</li>
-                                                    <li>Oversee the efficient use of production project budgets ranging
-                                                        from $2,000 - $25,000</li>
+                                                    <li>Estudio especializado en fotografía para escuelas.</li>
+                                                    <li>En fotografía de Retrato. </li>
+                                                    <li>Cubir eventos como: Bodas, VX Años.</li>
+                                                    <li>Impresión de fotografía para Documentos Oficiales.</li>
                                                 </ul>
                                             </p>
                                         </div>
                                         <div class="resume-item">
-                                            <h4>Graphic design specialist</h4>
-                                            <h5>2017 - 2018</h5>
-                                            <p><em>Stepping Stone Advertising, New York, NY</em></p>
+                                            <h4>Edición de fotografía desde:</h4>
+                                            <h5>2015 - Presente</h5>
+                                            <p><em>En Guadalajara, Jalisco, México.</em></p>
                                             <p>
                                                 <ul>
-                                                    <li>Developed numerous marketing programs (logos,
-                                                        brochures,infographics, presentations, and advertisements).</li>
-                                                    <li>Managed up to 5 projects or tasks at a given time while under
-                                                        pressure</li>
-                                                    <li>Recommended and consulted with clients on the most appropriate
-                                                        graphic design</li>
-                                                    <li>Created 4+ design presentations and proposals a month for
-                                                        clients and account managers</li>
+                                                    <li>Edición de fotografía en formato profesional.</li>
+                                                    <li>Diseños personalizados y unicos.</li>
+                                                    <li>La mejor calidad para nuestros clientes y en diferentes formatos.</li>
+                                                    <li>Recreación de momentos especiales</li>
                                                 </ul>
                                             </p>
                                         </div>
@@ -108,7 +98,7 @@
                                 <div class="section-title">
                                     <span>Servicios</span>
                                     <h2>Servicios</h2>
-                                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                                    <p>La mejor calidad y el mejor servicio, para tí.</p>
                                 </div>
 
                                 <div class="row">
@@ -116,8 +106,7 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
                                             <h4 class="title"><a href="">Sesión de Fotos</a></h4>
-                                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et
-                                                quas molestias excepturi sint occaecati cupiditate non provident</p>
+                                            <p class="description">Sesiones de fotos profesionales, en estudio o en exteriores</p>
                                         </div>
                                     </div>
 
@@ -125,8 +114,7 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bx-file"></i></div>
                                             <h4 class="title"><a href="">Edición o Impresión</a></h4>
-                                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate
-                                                velit esse cillum dolore eu fugiat nulla pariatur</p>
+                                            <p class="description">Impresión de tus fotografías favoritas o edición de las mismas al mejor precio</p>
                                         </div>
                                     </div>
 
@@ -134,8 +122,7 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bx-tachometer"></i></div>
                                             <h4 class="title"><a href="">Vídeo</a></h4>
-                                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt
-                                                in culpa qui officia deserunt mollit anim id est laborum</p>
+                                            <p class="description">La mejor calidad para conservar para siempre cada uno de tus mejores momentos</p>
                                         </div>
                                     </div>
 
@@ -143,13 +130,10 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bx-world"></i></div>
                                             <h4 class="title"><a href="">Paquetes especiales</a></h4>
-                                            <p class="description">At vero eos et accusamus et iusto odio dignissimos
-                                                ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                            <p class="description">Paquetes personalizados y únicos para satisfacer todas tus necesidades.</p>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
                         </section><!-- End My Services Section -->
 
@@ -160,7 +144,7 @@
                                 <div class="section-title">
                                     <span>Portafolio</span>
                                     <h2>Portafolio</h2>
-                                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                                    <p>Conservando para siempre tus mejores momentos </p>
                                 </div>
 
                                 <ul id="portfolio-flters" class="d-flex justify-content-center">
@@ -317,9 +301,8 @@
                             <div class="container">
 
                                 <div class="section-title">
-                                    <span>Acerca De</span>
-                                    <h2>Acerca De</h2>
-                                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                                    <span>Acerca De Nosotros</span>
+                                    <h2>Acerca De Nosotros</h2>
                                 </div>
 
                                 <div class="row">
@@ -331,63 +314,58 @@
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <ul>
-                                                        <li><i class="icofont-rounded-right"></i> <strong>Name:</strong>
-                                                            Laura Thomson</li>
+                                                        <li><i class="icofont-rounded-right"></i> <strong>Nombre:</strong>
+                                                            Estudio Fotográfico Cristy's</li>
                                                         <li><i class="icofont-rounded-right"></i>
-                                                            <strong>Website:</strong> www.example.com</li>
+                                                            <strong>Correo:</strong> estudiocristyprogra@gmail.com</li>
                                                         <li><i class="icofont-rounded-right"></i>
-                                                            <strong>Phone:</strong> +123 456 7890</li>
-                                                        <li><i class="icofont-rounded-right"></i> <strong>City:</strong>
-                                                            City : New York, USA</li>
+                                                            <strong>Teléfonos:</strong> 333825-0702</li>
+                                                        <li><i class="icofont-rounded-right"></i> <strong>Ubicación:</strong>
+                                                            Av. Hidalgo #1102-A. <br> Colonia: America. <br> Ciudad de Guadalajara, Jalisco. México.</li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <ul>
-                                                        <li><i class="icofont-rounded-right"></i> <strong>Age:</strong>
-                                                            30</li>
+                                                        <li><i class="icofont-rounded-right"></i> <strong>Horario de Atención:</strong></li>
                                                         <li><i class="icofont-rounded-right"></i>
-                                                            <strong>Degree:</strong> Master</li>
+                                                            <strong>Lunes - Viernes:</strong> 10:00 - 14:00 Hrs y 16:00 - 20:00 Hrs.</li>
                                                         <li><i class="icofont-rounded-right"></i>
-                                                            <strong>Email:</strong> email@example.com</li>
+                                                            <strong>Sábados:</strong> 10:00 - 14:00 Hrs.</li>
                                                         <li><i class="icofont-rounded-right"></i>
-                                                            <strong>Freelance:</strong> Available</li>
+                                                            <strong>Domingo:</strong> Descansamos</li>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="row mt-n4">
                                                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                                     <div class="count-box">
-                                                        <i class="icofont-simple-smile" style="color: #20b38e;"></i>
-                                                        <span data-toggle="counter-up">65</span>
-                                                        <p><strong>Happy Clients</strong> consequuntur voluptas nostrum
-                                                            aliquid ipsam architecto ut.</p>
+                                                        <i class="icofont-simple-smile" style="color: #20b38e;">+</i>
+                                                        <span data-toggle="counter-up">792,500</span>
+                                                        <p><strong>Clientes Felices</strong> que han adquirido nuestro servicio de excelencia estos 50 años.</p>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                                     <div class="count-box">
-                                                        <i class="icofont-document-folder" style="color: #8a1ac2;"></i>
-                                                        <span data-toggle="counter-up">85</span>
-                                                        <p><strong>Projects</strong> adipisci atque cum quia aspernatur
-                                                            totam laudantium et quia dere tan</p>
+                                                        <i class="icofont-document-folder" style="color: #8a1ac2;">+</i>
+                                                        <span data-toggle="counter-up">47,550</span>
+                                                        <p><strong>Paquetes</strong> vendidos a diferentes instituciones a lo largo de estos 50 años de trabajo constante.</p>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                                     <div class="count-box">
-                                                        <i class="icofont-clock-time" style="color: #2cbdee;"></i>
-                                                        <span data-toggle="counter-up">12</span>
-                                                        <p><strong>Years of experience</strong> aut commodi quaerat modi
-                                                            aliquam nam ducimus aut voluptate non vel</p>
+                                                        <i class="icofont-clock-time" style="color: #ee2c66;">+</i>
+                                                        <span data-toggle="counter-up">824,200</span>
+                                                        <p><strong>Horas invertidas</strong> cumpliendo cada uno de nuestros pedidos.</p>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                                     <div class="count-box">
-                                                        <i class="icofont-award" style="color: #ffb459;"></i>
-                                                        <span data-toggle="counter-up">15</span>
-                                                        <p><strong>Awards</strong> rerum asperiores dolor alias quo
-                                                            reprehenderit eum et nemo pad der</p>
+                                                        <i class="icofont-award" style="color: #ffb459;">+</i>
+                                                        <span data-toggle="counter-up">1,500</span>
+                                                        <p><strong>Reconocimientos</strong> por nuestro arduo trabajo durante estos 50 años.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -395,7 +373,7 @@
 
                                         <div class="skills-content pl-lg-4">
                                             <div class="progress">
-                                                <span class="skill">HTML <i class="val">100%</i></span>
+                                                <span class="skill">Calidad del servicio <i class="val">100%</i></span>
                                                 <div class="progress-bar-wrap">
                                                     <div class="progress-bar" role="progressbar" aria-valuenow="100"
                                                         aria-valuemin="0" aria-valuemax="100"></div>
@@ -403,7 +381,7 @@
                                             </div>
 
                                             <div class="progress">
-                                                <span class="skill">CSS <i class="val">90%</i></span>
+                                                <span class="skill"> cliente satisfecho <i class="val">90%</i></span>
                                                 <div class="progress-bar-wrap">
                                                     <div class="progress-bar" role="progressbar" aria-valuenow="90"
                                                         aria-valuemin="0" aria-valuemax="100"></div>
@@ -411,9 +389,9 @@
                                             </div>
 
                                             <div class="progress">
-                                                <span class="skill">JavaScript <i class="val">75%</i></span>
+                                                <span class="skill"> cliente insatisfecho <i class="val">10%</i></span>
                                                 <div class="progress-bar-wrap">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="10"
                                                         aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>

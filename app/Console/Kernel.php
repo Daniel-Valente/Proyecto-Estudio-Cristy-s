@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+         'App\Console\Commands\RegisteredUsers',
     ];
 
     /**
@@ -24,6 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('registered:users')->everyMinute();
         // $schedule->command('inspire')->hourly();
     }
 
