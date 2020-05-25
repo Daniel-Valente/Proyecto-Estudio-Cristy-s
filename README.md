@@ -4,9 +4,14 @@ Nombre del proyecto:
 Objetivo del proyecto:
     Este proyecto es presentado con la finalidad de establecerle a un negocio de fotografía una aplicación web en que sus clientes tengan las posibilidad de ingresar y solicitarle una cita para uno de sus servicio en cuestión.
 
-    Dentro de esta aplicación el cliente tiene la posibilidad de realizar el pago del servicio solicitado, ya sea en abono o el pago completo, además de solicitar una factura de sus pagos en linea, un estado de todos los pedidos, poderse comunicar con el estudio si sucede un inconveniente y si lo desea, compartir con los demás clientes las fotografías que se le ha entregado en versión digital.
+    Dentro de esta aplicación el cliente tiene la posibilidad de realizar el pago del servicio solicitado, 
+    ya sea en abono o el pago completo, además de solicitar una factura de sus pagos en linea, un estado 
+    de todos los pedidos, poderse comunicar con el estudio si sucede un inconveniente y si lo desea, 
+    compartir con los demás clientes las fotografías que se le ha entregado en versión digital.
 
-    Por otra parte, por medio del los administradores, se le permite modificar los pedidos cuando estos se han completado la cita, estableciendo un día de entrega del pedido y establecerle que se ha pagado al comprobar el historia de los pagos del cliente.
+    Por otra parte, por medio del los administradores, se le permite modificar los pedidos cuando estos se 
+    han completado la cita, estableciendo un día de entrega del pedido y establecerle que se ha pagado al 
+    comprobar el historia de los pagos del cliente.
 
 Integrante:
     Daniel Valente.
