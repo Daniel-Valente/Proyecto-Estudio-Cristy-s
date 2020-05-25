@@ -1,79 +1,71 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+Nombre del proyecto:
+    Estudio Cristy's
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Objetivo del proyecto:
+    Este proyecto es presentado con la finalidad de establecerle a un negocio de fotografía una aplicación web en que sus clientes tengan las posibilidad de ingresar y solicitarle una cita para uno de sus servicio en cuestión.
 
-## About Laravel
+    Dentro de esta aplicación el cliente tiene la posibilidad de realizar el pago del servicio solicitado, ya sea en abono o el pago completo, además de solicitar una factura de sus pagos en linea, un estado de todos los pedidos, poderse comunicar con el estudio si sucede un inconveniente y si lo desea, compartir con los demás clientes las fotografías que se le ha entregado en versión digital.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    Por otra parte, por medio del los administradores, se le permite modificar los pedidos cuando estos se han completado la cita, estableciendo un día de entrega del pedido y establecerle que se ha pagado al comprobar el historia de los pagos del cliente.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Integrante:
+    Daniel Valente.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Instrucciones extra de su uso:
+1) Instrucciones para el metodo de pago:
+    Se implemento un sistema de pago en el cual se encuentra bajo la página de Stripe, las credenciales presentada para que funcion es bajo la siguiente configuración en el archivo .env
 
-## Learning Laravel
+    
+    STRIPE_KEY=pk_test_DQbyxrJgAAgKbk6bflU5y0WT00qu65sYeI
+    STRIPE_SECRET=sk_test_D1Ycl2wLlkxnGzv7IhKBWMfN00YHnOvkH4
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Para el servicio de pago, se establece una tarjeta de debito de prueba para que no tenga que incluirse una real mientra que testea, esos datos son los siguientes.
+    
+    Número de tarjeta:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    4242 4242 4242 4242
 
-## Laravel Sponsors
+    MES:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    12
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+    AÑO:
 
-## Contributing
+    22
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    CVC:
 
-## Code of Conduct
+    123
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    Código Postal o ZIP:
 
-## Security Vulnerabilities
+    92407
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2) Instrucciónes para el servicio de correo.
+    Para validar los correos, se hace mediante la página mailtrap, los datos que se establecen dentro del archivo .env son los siguientes:
+    
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=e8decbf5b4cbe1
+    MAIL_PASSWORD=80506e8cfc6a8e
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS=Cristy@estudiocristys.com
+    MAIL_FROM_NAME="${APP_NAME}"
 
-## License
+Para hacer la comprobación de los correos, se utilizo la siguiente cuenta:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    correo:
+    
+    estudiocristyprogra@gmail.com
+
+    contraseña:
+
+    estudi0Cristy13
+
+La sesión se hace mediante credenciales de tercero con google, con esta cuenta se puede comprobar los correos de verificación, los correos personalizados de los clientes a la administración del estudio y otra opción extra.
+
+3) Task Scheduling
+    Se tiene programada que se envie un correo automatico con cuenta con el estado de la página durante cada minuto. Eso se aplica por medio del siguiente comando:
+
+    php artisan registered:users
