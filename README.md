@@ -1,7 +1,7 @@
-Nombre del proyecto:
-    Estudio Cristy's
+<h1> Nombre del proyecto:</h1> <br>
+    <h2> Estudio Cristy's </h2> 
 
-Objetivo del proyecto:
+<h1> Objetivo del proyecto: </h1> <br>
     Este proyecto es presentado con la finalidad de establecerle a un negocio de fotografía una aplicación web en que sus clientes tengan las posibilidad de ingresar y solicitarle una cita para uno de sus servicio en cuestión.
 
     Dentro de esta aplicación el cliente tiene la posibilidad de realizar el pago del servicio solicitado, 
@@ -13,11 +13,11 @@ Objetivo del proyecto:
     han completado la cita, estableciendo un día de entrega del pedido y establecerle que se ha pagado al 
     comprobar el historia de los pagos del cliente.
 
-Integrante: <br>
-    <h1> Daniel Valente. </h1>
+<h1> Integrante: </h1> <br>
+    <h2> Daniel Valente. </h2>
 
-Instrucciones extra de su uso:
-1) Instrucciones para el metodo de pago:
+<h1> Instrucciones extra de su uso: </h1> <br>
+<h2> 1) Instrucciones para el metodo de pago: </h2> <br>
     Se implemento un sistema de pago en el cual se encuentra bajo la página de Stripe, las credenciales presentada para que funcion es bajo la siguiente configuración en el archivo .env
 
     
@@ -46,7 +46,7 @@ Para el servicio de pago, se establece una tarjeta de debito de prueba para que 
 
     92407
 
-2) Instrucciónes para el servicio de correo.
+<h2> 2) Instrucciónes para el servicio de correo. </h2>
     Para validar los correos, se hace mediante la página mailtrap, los datos que se establecen dentro del archivo .env son los siguientes:
     
     MAIL_MAILER=smtp <br>
@@ -71,7 +71,7 @@ Para hacer la comprobación de los correos, se utilizo la siguiente cuenta:
 
 La sesión se hace mediante credenciales de tercero con google, con esta cuenta se puede comprobar los correos de verificación, los correos personalizados de los clientes a la administración del estudio y otra opción extra.
 
-3) Task Scheduling
+<h2> 3) Task Scheduling </h2>
     Se tiene programada que se envie un correo automatico con cuenta con el estado de la página durante cada minuto. Eso se aplica por medio del siguiente comando:
 
     php artisan registered:users
