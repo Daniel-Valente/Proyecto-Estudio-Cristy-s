@@ -1,4 +1,4 @@
-<h1> Nombre del proyecto:</h1> <br>
+<h1> Nombre del proyecto:</h1>
     <h2> Estudio Cristy's </h2> 
 
 <h1> Objetivo del proyecto: </h1> <br>
@@ -13,8 +13,8 @@
     han completado la cita, estableciendo un día de entrega del pedido y establecerle que se ha pagado al 
     comprobar el historia de los pagos del cliente.
 
-<h1> Integrante: </h1> <br>
-    <h2> Daniel Valente. </h2>
+<h1> Integrante: </h1>
+    <h2> Daniel Valente. </h2> <hr>
 
 <h1> Instrucciones extra de su uso: </h1> <br>
 <h2> 1) Instrucciones para el metodo de pago: </h2> <br>
