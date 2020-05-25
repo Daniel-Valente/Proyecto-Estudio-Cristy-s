@@ -55,8 +55,9 @@ Para el servicio de pago, se establece una tarjeta de debito de prueba para que 
     MAIL_USERNAME=e8decbf5b4cbe1
     MAIL_PASSWORD=80506e8cfc6a8e
     MAIL_ENCRYPTION=null
-    MAIL_FROM_ADDRESS=Cristy@estudiocristys.com
-    MAIL_FROM_NAME="${APP_NAME}"
+    MAIL_FROM_ADDRESS=Cristy@estudiocristrys.com
+    MAIL_FROM_NAME="CRISTY"
+    
 
 Para hacer la comprobación de los correos, se utilizo la siguiente cuenta:
 
