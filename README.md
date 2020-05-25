@@ -50,13 +50,13 @@ Para el servicio de pago, se establece una tarjeta de debito de prueba para que 
     Para validar los correos, se hace mediante la página mailtrap, los datos que se establecen dentro del archivo .env son los siguientes:
     
     MAIL_MAILER=smtp <br>
-    MAIL_HOST=smtp.mailtrap.io
-    MAIL_PORT=2525
-    MAIL_USERNAME=e8decbf5b4cbe1
-    MAIL_PASSWORD=80506e8cfc6a8e
-    MAIL_ENCRYPTION=null
-    MAIL_FROM_ADDRESS=Cristy@estudiocristrys.com
-    MAIL_FROM_NAME="CRISTY"
+    MAIL_HOST=smtp.mailtrap.io <br>
+    MAIL_PORT=2525 <br>
+    MAIL_USERNAME=e8decbf5b4cbe1 <br>
+    MAIL_PASSWORD=80506e8cfc6a8e <br>
+    MAIL_ENCRYPTION=null <br>
+    MAIL_FROM_ADDRESS=Cristy@estudiocristrys.com <br>
+    MAIL_FROM_NAME="CRISTY" <br>
     
 
 Para hacer la comprobación de los correos, se utilizo la siguiente cuenta:
