@@ -13,8 +13,8 @@ Objetivo del proyecto:
     han completado la cita, estableciendo un día de entrega del pedido y establecerle que se ha pagado al 
     comprobar el historia de los pagos del cliente.
 
-Integrante:
-    Daniel Valente.
+Integrante: <br>
+    <h1> Daniel Valente. </h1>
 
 Instrucciones extra de su uso:
 1) Instrucciones para el metodo de pago:
