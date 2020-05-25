@@ -49,7 +49,7 @@ Para el servicio de pago, se establece una tarjeta de debito de prueba para que 
 2) Instrucciónes para el servicio de correo.
     Para validar los correos, se hace mediante la página mailtrap, los datos que se establecen dentro del archivo .env son los siguientes:
     
-    MAIL_MAILER=smtp
+    MAIL_MAILER=smtp <br>
     MAIL_HOST=smtp.mailtrap.io
     MAIL_PORT=2525
     MAIL_USERNAME=e8decbf5b4cbe1
