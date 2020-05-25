@@ -21,15 +21,18 @@ class OrdenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $date = $request->get('date');
+        $pagos = Pago::orderBy('id')->Date($date)->paginate(15);
         $ordens = Orden::with('user', 'categoria', 'cita')->paginate(15);
         return view('ordens.ordenIndex', compact('ordens'));
     }
 
-    public function pagoIndex()
+    public function pagoIndex(Request $request)
     {
-        $pagos = Pago::get();
+        $date = $request->get('date');
+        $pagos = Pago::orderBy('id')->Date($date)->paginate(15);
        return view('pagos.pagoIndex', compact('pagos'));
     }
 
@@ -119,7 +122,7 @@ class OrdenController extends Controller
     {
         $orden->delete();
 
-        return redirect()->route('tarea.index')
+        return redirect()->route('cita.index')
         ->with([
         'mensaje' => 'Tarea eliminada.',
         'clase-alerta' => 'alert-warning'

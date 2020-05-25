@@ -21,11 +21,11 @@
                     @csrf
                     <div class="form-group col-md-4">
                         <label for="categoria">Categoria</label>
-                        {!! Form::select('categoria_id', array('1' => 'Fotos en exterior', '2' => 'Fotos en estudio', '3' => 'Edición de fotos'), ['class' => 'forn-control']) !!}
+                        {!! Form::select('categoria_id', array('1' => 'Fotos en exterior', '2' => 'Fotos en estudio', '3' => 'Edición de fotos'), ['class' => 'forn-control', 'required']) !!}
                     </div>
                     <div class="form-group">
                         <label for="mi_archivo">Cargar Fotografía</label>
-                        {!! Form::file('mi_archivo') !!}
+                        {!! Form::file('mi_archivo', ['class' => 'forn-control', 'required']) !!}
                     </div>
                     <button type="submit" class="btn btn-primary">Confirmar</button>
                     {!! Form::close() !!}

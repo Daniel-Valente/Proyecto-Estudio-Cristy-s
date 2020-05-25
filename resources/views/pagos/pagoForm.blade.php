@@ -24,20 +24,20 @@
                 @csrf
                 <div class="form-group">
                     <label for="pago">Monto: </label> <br>
-                    {!! Form::number('pago') !!}
+                    {!! Form::number('pago', null, ['class' => 'form-control', 'required']) !!}
                 </div> <br>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="correo">Nombre: </label> <br>
-                        {!! Form:: text('nombre') !!}
+                        {!! Form:: text('nombre', null, ['class' => 'form-control', 'required']) !!}
                     </div>
                     <div class="form-group col-md-4">
                         <label for="apellido">Apellido: </label> <br>
-                        {!! Form:: text('apellido') !!}
+                        {!! Form:: text('apellido', null, ['class' => 'form-control', 'required']) !!}
                     </div>
                     <div class="form-group col-md-4">
                         <label for="correo">Correo: </label> <br>
-                        {!! Form::email('correo') !!}
+                        {!! Form::email('correo', null, ['class' => 'form-control', 'required']) !!}
                     </div>
                 </div> <br>
                 <div class="form-row">
@@ -58,7 +58,6 @@
                 </div>
 
                 {!! Form::close() !!}
-
 
                 <script>
                     // Create a Stripe client.

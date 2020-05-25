@@ -106,7 +106,7 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
                                             <h4 class="title"><a href="">Sesión de Fotos</a></h4>
-                                            <p class="description">Sesiones de fotos profesionales, en estudio o en exteriores</p>
+                                            <p class="description">Sesiones de fotos profesionales, en estudio o en exteriores. Costo $200 y $250</p>
                                         </div>
                                     </div>
 
@@ -114,7 +114,7 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bx-file"></i></div>
                                             <h4 class="title"><a href="">Edición o Impresión</a></h4>
-                                            <p class="description">Impresión de tus fotografías favoritas o edición de las mismas al mejor precio</p>
+                                            <p class="description">Impresión de tus fotografías favoritas o edición de las mismas al mejor precio. Costo $100 y $50</p>
                                         </div>
                                     </div>
 
@@ -122,7 +122,7 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bx-tachometer"></i></div>
                                             <h4 class="title"><a href="">Vídeo</a></h4>
-                                            <p class="description">La mejor calidad para conservar para siempre cada uno de tus mejores momentos</p>
+                                            <p class="description">La mejor calidad para conservar para siempre cada uno de tus mejores momentos. Costo $650</p>
                                         </div>
                                     </div>
 
@@ -130,7 +130,7 @@
                                         <div class="icon-box">
                                             <div class="icon"><i class="bx bx-world"></i></div>
                                             <h4 class="title"><a href="">Paquetes especiales</a></h4>
-                                            <p class="description">Paquetes personalizados y únicos para satisfacer todas tus necesidades.</p>
+                                            <p class="description">Paquetes personalizados y únicos para satisfacer todas tus necesidades. Costo $1500</p>
                                         </div>
                                     </div>
                                 </div>

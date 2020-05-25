@@ -23,4 +23,11 @@ class Pago extends Model
     {
         return $this->belongsTo(Categoria::class);
     }
+
+    //Query Scope
+    public function scopeDate($query, $date)
+    {
+        if($date)
+            return $query->where('fecha_Pago', 'LIKE', "%$date%");
+    }
 }

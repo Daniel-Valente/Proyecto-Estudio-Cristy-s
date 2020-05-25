@@ -56,7 +56,6 @@ class CitaController extends Controller
 
         if($request->fecha_Cita == $request->fecha_Orden)
         {
-            $categorias = Categoria::all()->pluck('precio','nombre_Categoria', 'id');
             return redirect()->route('cita.create')->with([
                 'mensaje' => 'No puede solicitar la cita el mismo día de la orden.',
                 'clase-alerta' => 'alert-warning'

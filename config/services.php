@@ -46,10 +46,4 @@ return [
         'client_secret' => env('GITHUB_CLIENT_SECRET', 'AvFdJsnili94Cyw8eOsNRMcJIyz6SI9ISkcKHKBXkNeEcCyuFT'),
         'redirect' => 'http://proyecto.test:8080/login/twitter/callback',
     ],
-
-    'facebook' => [
-        'client_id' => env('GITHUB_CLIENT_ID' , '2612939492319756'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET', 'fdee1f468ccda11381dc84434f22c013'),
-        'redirect' => 'http://proyecto.test:8080/login/facebook/callback',
-    ],
 ];

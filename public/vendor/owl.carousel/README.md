@@ -1,122 +1,71 @@
-# Owl Carousel 2
+Nombre del proyecto:
+    Estudio Cristy's
 
-Touch enabled [jQuery](https://jquery.com/) plugin that lets you create a beautiful, responsive carousel slider. **To get started, check out https://owlcarousel2.github.io/OwlCarousel2/.**
+Objetivo del proyecto:
+    Este proyecto es presentado con la finalidad de establecerle a un negocio de fotografía una aplicación web en que sus clientes tengan las posibilidad de ingresar y solicitarle una cita para uno de sus servicio en cuestión.
 
-**Notice:** The old Owl Carousel site (owlgraphic [dot] com) is no longer in use. Please delete all references to this in bookmarks and your own products' documentation as it's being used for malicious purposes.
+    Dentro de esta aplicación el cliente tiene la posibilidad de realizar el pago del servicio solicitado, ya sea en abono o el pago completo, además de solicitar una factura de sus pagos en linea, un estado de todos los pedidos, poderse comunicar con el estudio si sucede un inconveniente y si lo desea, compartir con los demás clientes las fotografías que se le ha entregado en versión digital.
 
-## Quick start
+    Por otra parte, por medio del los administradores, se le permite modificar los pedidos cuando estos se han completado la cita, estableciendo un día de entrega del pedido y establecerle que se ha pagado al comprobar el historia de los pagos del cliente.
 
-### Install
+Integrante:
+    Daniel Valente.
 
-This package can be installed with:
+Instrucciones extra de su uso:
+1) Instrucciones para el metodo de pago:
+    Se implemento un sistema de pago en el cual se encuentra bajo la página de Stripe, las credenciales presentada para que funcion es bajo la siguiente configuración en el archivo .env
 
-- [npm](https://www.npmjs.com/package/owl.carousel): `npm install --save owl.carousel` or `yarn add owl.carousel jquery`
-- [bower](http://bower.io/search/?q=owl.carousel): `bower install --save owl.carousel`
-
-Or download the [latest release](https://github.com/OwlCarousel2/OwlCarousel2/releases).
-
-### Load
-
-#### Webpack
-
-Add jQuery via the "webpack.ProvidePlugin" to your webpack configuration:
     
-    const webpack = require('webpack');
+    STRIPE_KEY=pk_test_DQbyxrJgAAgKbk6bflU5y0WT00qu65sYeI
+    STRIPE_SECRET=sk_test_D1Ycl2wLlkxnGzv7IhKBWMfN00YHnOvkH4
+
+Para el servicio de pago, se establece una tarjeta de debito de prueba para que no tenga que incluirse una real mientra que testea, esos datos son los siguientes.
     
-    //...
-    plugins: [
-        new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery'
-        }),
-    ],
-    //...
+    Número de tarjeta:
 
-Load the required stylesheet and JS:
+    4242 4242 4242 4242
 
-```js
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel';
-```
+    MES:
 
-#### Static HTML
+    12
 
-Put the required stylesheet at the [top](https://developer.yahoo.com/performance/rules.html#css_top) of your markup:
+    AÑO:
 
-```html
-<link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
-```
+    22
 
-```html
-<link rel="stylesheet" href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" />
-```
+    CVC:
 
-**NOTE:** If you want to use the default navigation styles, you will also need to include `owl.theme.default.css`.
+    123
 
+    Código Postal o ZIP:
 
-Put the script at the [bottom](https://developer.yahoo.com/performance/rules.html#js_bottom) of your markup right after jQuery:
+    92407
 
-```html
-<script src="/node_modules/jquery/dist/jquery.js"></script>
-<script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-```
+2) Instrucciónes para el servicio de correo.
+    Para validar los correos, se hace mediante la página mailtrap, los datos que se establecen dentro del archivo .env son los siguientes:
+    
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=e8decbf5b4cbe1
+    MAIL_PASSWORD=80506e8cfc6a8e
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS=Cristy@estudiocristys.com
+    MAIL_FROM_NAME="${APP_NAME}"
 
-```html
-<script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
-```
+Para hacer la comprobación de los correos, se utilizo la siguiente cuenta:
 
-### Usage
+    correo:
+    
+    estudiocristyprogra@gmail.com
 
-Wrap your items (`div`, `a`, `img`, `span`, `li` etc.) with a container element (`div`, `ul` etc.). Only the class `owl-carousel` is mandatory to apply proper styles:
+    contraseña:
 
-```html
-<div class="owl-carousel owl-theme">
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-</div>
-```
-**NOTE:** The `owl-theme` class is optional, but without it, you will need to style navigation features on your own.
+    estudi0Cristy13
 
+La sesión se hace mediante credenciales de tercero con google, con esta cuenta se puede comprobar los correos de verificación, los correos personalizados de los clientes a la administración del estudio y otra opción extra.
 
-Call the [plugin](https://learn.jquery.com/plugins/) function and your carousel is ready.
+3) Task Scheduling
+    Se tiene programada que se envie un correo automatico con cuenta con el estado de la página durante cada minuto. Eso se aplica por medio del siguiente comando:
 
-```javascript
-$(document).ready(function(){
-  $('.owl-carousel').owlCarousel();
-});
-```
-
-## Documentation
-
-The documentation, included in this repo in the root directory, is built with [Assemble](http://assemble.io/) and publicly available at https://owlcarousel2.github.io/OwlCarousel2/. The documentation may also be run locally.
-
-## Building
-
-This package comes with [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/). The following tasks are available:
-
-  * `default` compiles the CSS and JS into `/dist` and builds the doc.
-  * `dist` compiles the CSS and JS into `/dist` only.
-  * `watch` watches source files and builds them automatically whenever you save.
-  * `test` runs [JSHint](http://www.jshint.com/) and [QUnit](http://qunitjs.com/) tests headlessly in [PhantomJS](http://phantomjs.org/).
-
-To define which plugins are build into the distribution just edit `/_config.json` to fit your needs.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Roadmap
-
-Please make sure to check out our [Roadmap Discussion](https://github.com/OwlCarousel2/OwlCarousel2/issues/1756).
-
-
-## License
-
-The code and the documentation are released under the [MIT License](LICENSE).
+    php artisan registered:users

@@ -82,7 +82,7 @@
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
             <div class="copyright">
-                &copy; Copyright <strong><span>Laura</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Daniel Valente</span></strong>. Programación Para Internet
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->

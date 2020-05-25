@@ -25,6 +25,7 @@ class CreatePagosTable extends Migration
 
 
             $table->foreign('orden_id')->references('id')->on('ordens')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

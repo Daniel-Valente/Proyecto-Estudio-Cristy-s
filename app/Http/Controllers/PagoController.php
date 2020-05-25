@@ -60,7 +60,6 @@ class PagoController extends Controller
 
         $request->merge(['fecha_Pago' => date('Y-m-d')]);
         $request->merge(['user_id' => \Auth::id()]);
-        dd($request->all());
 
         Stripe::setApiKey(config('services.stripe.secret'));
         $token = $request->stripeToken;

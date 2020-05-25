@@ -25,17 +25,17 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="categoria">Categoria</label> <br>
-                            {!! Form::select('categoria_id', $categorias ,null, ['class' => 'forn-control']) !!}
+                            {!! Form::select('categoria_id', $categorias ,null, ['class' => 'form-control', 'required']) !!}
                         </div>
                         <div class="form-group col-md-6">
                             <label for="fecha_Cita">Fecha Cita</label>
                             {!! Form::date('fecha_Cita', isset($orden) ? $orden->fecha_Cita->toDateString() : null,
-                            ['class' => 'form-control'])!!}
+                            ['class' => 'form-control', 'required'])!!}
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="descripcion">Descripción del pedido</label>
-                        {!! Form::textarea('descripcion', null, ['class' => 'form-control', 'row' => '3']) !!}
+                        {!! Form::textarea('descripcion', null, ['class' => 'form-control', 'row' => '3', 'required']) !!}
                     </div>
                     <button type="submit" class="btn btn-primary">Confirmar</button>
                     {!! Form::close() !!}

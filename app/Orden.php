@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Orden extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'categoria_id', 'user_id',
         'cita_id', 'fecha_Cita',
@@ -13,7 +16,7 @@ class Orden extends Model
         'descripcion','estatus'
     ];
 
-    protected $dates = ['fecha_Orden', 'fecha_Cita', 'fecha_Entrega', 'created_at', 'updated_at'];
+    protected $dates = ['fecha_Orden', 'fecha_Cita', 'fecha_Entrega', 'created_at', 'updated_at', 'deleted_at'];
 
     public function user()
     {
@@ -39,5 +42,12 @@ class Orden extends Model
     public function paquetes()
     {
         return $this->belongsTo(Paquete::class);
+    }
+
+    //Query Scope
+    public function scopeDate($query, $date)
+    {
+        if($date)
+            return $query->where('fecha_Orden', 'LIKE', "%$date%");
     }
 }

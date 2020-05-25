@@ -13,6 +13,10 @@
                                 <button type="button" class="toggle-btn" onclick="login()">Registro</button>
                                 <button type="button" class="toggle-btn" onclick="register()" h>Register</button>
                             </div>
+                            <div class="social-icons">
+                                <a href="login/twitter"><img src="{{ asset('img/twitter.png') }}"></a>
+                                <a href="login/github"><img src="{{ asset('img/github.png') }}"></a>
+                            </div>
                             <form method="POST" action="{{ route('register') }}" id="login" class="input-group">
                                 @csrf
                                 <div class="form-group row">

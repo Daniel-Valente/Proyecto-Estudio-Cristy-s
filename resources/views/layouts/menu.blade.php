@@ -6,7 +6,6 @@
             <li><a href="{{ route('usersJson') }}">Usuarios</a></li>
             <li><a href="{{ route('orden.index') }}">Pedidos</a></li>
             <li><a href="{{ route('pagosIndex') }}">Pagos</a></li>
-            <li><a href="{{ route('pagosIndex') }}">Resumen</a></li>
             @else
                 <li><a href="{{ route('cita.index') }}">Mi Cita</a></li>
                 @include('layouts.historial-menu')
