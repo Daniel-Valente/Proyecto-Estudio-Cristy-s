@@ -24,8 +24,7 @@ class OrdenController extends Controller
     public function index(Request $request)
     {
         $date = $request->get('date');
-        $pagos = Pago::orderBy('id')->Date($date)->paginate(15);
-        $ordens = Orden::with('user', 'categoria', 'cita')->paginate(15);
+        $ordens = Orden::with('user', 'categoria', 'cita')->Date($date)->paginate(15);
         return view('ordens.ordenIndex', compact('ordens'));
     }
 

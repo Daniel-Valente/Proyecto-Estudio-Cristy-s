@@ -7,7 +7,7 @@
             <div class="form-row">
                 <div class="form-group col-md-7"></div>
                 <div class="form-group col-md-5">
-                    <h6 class="m-0 font-weight-bold text-warning"> Búsqueda de Pagos: </h6>
+                    <h6 class="m-0 font-weight-bold text-warning"> Búsqueda de Pedidos: </h6>
                     {!! Form::open(['route' => 'orden.index', 'method' => 'GET', 'class' => 'form-inline pull-right']) !!}
                         <div class="input-group is-invalid">
                             <h6 class="m-0 font-weight-bold text-info">fecha pedido:</h6>

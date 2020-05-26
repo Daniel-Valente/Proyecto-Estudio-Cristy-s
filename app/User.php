@@ -55,4 +55,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Galeria::class);
     }
 
+    public function Tipos()
+    {
+        return $this->BelongsToMany(Tipo::class);
+    }
+
+    //Query Scope
+    public function scopeName($query, $name)
+    {
+        if($name)
+            return $query->where('name', 'LIKE', "%$name%");
+    }
 }

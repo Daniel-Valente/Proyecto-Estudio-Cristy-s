@@ -43,7 +43,7 @@ Route::get('galeria/{galeria}/descargar', 'GaleriaController@download')->name('g
 
 Route::post('galeria/{galeria}/borrar', 'GaleriaController@delete')->name('galeria.delete')->middleware('auth');
 
-Route::resource('perfil', 'PerfilController')->middleware('auth');
+Route::resource('usuario', 'UserController')->middleware('auth');
 
 Route::post('galeria/cargar', 'GaleriaController@upload')->name('galeria.upload')->middleware('auth');
 
@@ -55,8 +55,4 @@ Route::get('/login/{provider}/callback', 'SocialAuthController@handleProviderCal
 
 Route::get('/usersJson', 'ApiController@index')->name('usersJson')->middleware('auth');
 
-Route::get('email-test', function(){
-    $details['email'] = 'Cristy@estudiocristys.com';
-    dispatch(new App\Jobs\SendEmailJob($details));
-    dd('done');
-});
+Route::resource('tipo', 'TipoController')->middleware('auth');

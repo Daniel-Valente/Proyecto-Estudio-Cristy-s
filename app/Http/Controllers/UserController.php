@@ -5,43 +5,61 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Pago;
 use App\Orden;
-use App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
+use App\Mail\DeleteUserReceived;
+use Illuminate\Support\Facades\Mail;
 
-class PerfilController extends Controller
+class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except('index');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
+    {
+        $name = $request->get('name');
+        $users = User::Name($name)->paginate(15);
+        return view('users.userIndex', compact('users'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\user  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
         $users = User::get();
         $pagos = Pago::with('orden')->paginate('15');
         $ordenes = Orden::with('user')->paginate('15');
         return view('users.userShow', compact('users', 'pagos', 'ordenes'));
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\orden  $orden
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        $users = User::get();
-        return view('users.userShow', compact('users'));
-    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $User
+     * @param  \App\user  $user
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -54,7 +72,7 @@ class PerfilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Orden  $orden
+     * @param  \App\user  $user
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -85,22 +103,26 @@ class PerfilController extends Controller
         $user->avatar = $request['avatar'];
         $user->save();
 
-        return redirect()->route('perfil.index');
+        return redirect()->route('usuario.show');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cita  $cita
+     * @param  \App\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $orden)
+    public function destroy($id)
     {
-        $orden->merge(['cita_id' => '2']);
+        $user = User::find($id);
 
-        return redirect()->route('home')
+        $user->delete();
+
+        Mail::to('estudiocristyprogra@gmail.com')->send(new DeleteUserReceived());
+
+        return redirect()->route('usuario.index')
         ->with([
-        'mensaje' => 'Tarea eliminada.',
+        'mensaje' => 'Usuario eliminado.',
         'clase-alerta' => 'alert-warning'
         ]);
     }

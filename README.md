@@ -14,7 +14,8 @@
     comprobar el historia de los pagos del cliente.
 
 <h1> Integrante: </h1>
-    <h2> Daniel Valente. </h2> <hr>
+    <h2> Daniel Valente. </h2> <br>
+    <h2> Fernando Martinez. </h2><hr>
 
 <h1> Instrucciones extra de su uso: </h1> <br>
 <h2> 1) Instrucciones para el metodo de pago: </h2> <br>
@@ -52,8 +53,8 @@ Para el servicio de pago, se establece una tarjeta de debito de prueba para que 
     MAIL_MAILER=smtp <br>
     MAIL_HOST=smtp.mailtrap.io <br>
     MAIL_PORT=2525 <br>
-    MAIL_USERNAME=e8decbf5b4cbe1 <br>
-    MAIL_PASSWORD=80506e8cfc6a8e <br>
+    MAIL_USERNAME=8ab0707321a145 <br>
+    MAIL_PASSWORD=3ed3e52774fa43 <br>
     MAIL_ENCRYPTION=null <br>
     MAIL_FROM_ADDRESS=Cristy@estudiocristrys.com <br>
     MAIL_FROM_NAME="CRISTY" <br>

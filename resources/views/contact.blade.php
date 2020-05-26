@@ -17,19 +17,25 @@
                     </ul>
                 </div>
                 @endif
-                {!! Form::open(['route' => 'messages.store', $orden->id]) !!}
+                {!! Form::open(['route' => 'messages.store']) !!}
                 @csrf
-                <div class="form-group">
-                    <label for="name">Nombre: </label> <br>
-                    {!! Form::text('name') !!}
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo: </label> <br>
-                    {!! Form::email('email') !!}
-                </div>
-                <div class="form-group">
-                    <label for="subject">Asunto: </label> <br>
-                    {!! Form::text('subject') !!}
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Nombre: </label> <br>
+                        {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Correo: </label> <br>
+                        {!! Form::email('email', null, ['class' => 'form-control', 'required']) !!}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="subject">Asunto: </label> <br>
+                        {!! Form::text('subject', null, ['class' => 'form-control', 'required']) !!}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="subject">Número de Orden: </label> <br>
+                        {!! Form::number('id', null, ['class' => 'form-control', 'required']) !!}
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="content">Mensaje: </label> <br>

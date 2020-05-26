@@ -3,9 +3,9 @@
         @if(\Auth::id())
             <li><a href="{{ route('home') }}">Inicio</a></li>
             @if (\Gate::allows('administrador'))
-            <li><a href="{{ route('usersJson') }}">Usuarios</a></li>
             <li><a href="{{ route('orden.index') }}">Pedidos</a></li>
             <li><a href="{{ route('pagosIndex') }}">Pagos</a></li>
+            @include('layouts.usersControl')
             @else
                 <li><a href="{{ route('cita.index') }}">Mi Cita</a></li>
                 @include('layouts.historial-menu')

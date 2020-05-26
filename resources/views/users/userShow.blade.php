@@ -21,7 +21,7 @@
                                 {{ \Auth::user()->descripcion}}
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
-                        <a class="dropdowm-item" href="{{ route('perfil.edit', \Auth::user()->id ) }}">
+                        <a class="dropdowm-item" href="{{ route('usuario.edit', \Auth::user()->id ) }}">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Editar
                         </a>

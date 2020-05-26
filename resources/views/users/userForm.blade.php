@@ -22,23 +22,23 @@
                                 <div class="form-group col-md-12">
                                     <label for="avatar">Cambiar Imagen</label><br>
                                     <img src=" {{ asset('img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt=""><br>
-                                    {!! Form::file('avatar', null, ['class' => 'form-control', 'required']) !!}
+                                    {!! Form::file('avatar') !!}
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="name">Nombre</label>
-                                    {!! Form::text('name', $user->name, ['class' => 'form-control', 'required']) !!}
+                                    {!! Form::text('name', $user->name, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="email">Correo</label>
                                     {!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' =>
-                                    'example@gmail.com', 'required']) !!}
+                                    'example@gmail.com']) !!}
                                 </div>
                                 <div class="form-group col-md-8">
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i> <br>
                                             <label for="descripcion">Descripción</label>
                                             {!! Form::textarea('descripcion', $user->descripcion, ['class' => 'form-control', 'row'
-                                            => '2', 'required']) !!}
+                                            => '2']) !!}
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                 </div>

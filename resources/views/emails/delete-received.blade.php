@@ -58,15 +58,24 @@
                                         <h1
                                             style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">
                                             ¡Hola!</h1>
+                                        <h1>Cuenta dada de baja</h1>
                                         <hr>
-                                        <div>
-                                            <h1>REPORTE DEL DÍA</h1>
-                                            total de usuarios registrados: {{ $countUser }} <br>
-                                            total de ordenes registrados: {{ $countOrden }} <br>
-                                            total de pagos registrados: {{ $countPago }} <br>
-                                        </div>
+                                        <p>
+                                            Hola! debido a agentes externos que se han presentando, se ha procedido a
+                                            dar de baja su <br>
+                                            su cuenta.
+                                        </p>
+                                        <p>
+                                            Si necesita aclaraciones respecto a lo sucedido y crees que hubo una
+                                            equivocación, se le solicita <br>
+                                            que acuda a nuestra sucursales para aclarar lo sucedido.
+                                        </p>
                                         <hr>
                                         <br>
+                                        <p
+                                            style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
+                                            Saludos,<br>
+                                            Cristy</p>
                                     </td>
                                 </tr>
                             </table>

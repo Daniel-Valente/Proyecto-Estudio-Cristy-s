@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Paquete extends Model
+class Tipo extends Model
 {
     public $timestamps = false;
 
-    public function orden()
+    public function Users()
     {
-        return $this->hasMany(Orden::class);
+        return $this->BelongsToMany(User::class);
     }
 }
