@@ -19,11 +19,7 @@
 
 <h1> Instrucciones extra de su uso: </h1> <br>
 <h2> 1) Instrucciones para el metodo de pago: </h2> <br>
-    Se implemento un sistema de pago en el cual se encuentra bajo la página de Stripe, las credenciales presentada para que funcion es bajo la siguiente configuración en el archivo .env
-
-    
-    STRIPE_KEY=pk_test_DQbyxrJgAAgKbk6bflU5y0WT00qu65sYeI
-    STRIPE_SECRET=sk_test_D1Ycl2wLlkxnGzv7IhKBWMfN00YHnOvkH4
+    Se implemento un sistema de pago en el cual se encuentra bajo la página de Stripe, se necesita establecer las credenciales en el archivo .env
 
 Para el servicio de pago, se establece una tarjeta de debito de prueba para que no tenga que incluirse una real mientra que testea, esos datos son los siguientes.
     
@@ -46,31 +42,6 @@ Para el servicio de pago, se establece una tarjeta de debito de prueba para que 
     Código Postal o ZIP:
 
     92407
-
-<h2> 2) Instrucciónes para el servicio de correo. </h2>
-    Para validar los correos, se hace mediante la página mailtrap, los datos que se establecen dentro del archivo .env son los siguientes:
-    
-    MAIL_MAILER=smtp <br>
-    MAIL_HOST=smtp.mailtrap.io <br>
-    MAIL_PORT=2525 <br>
-    MAIL_USERNAME=8ab0707321a145 <br>
-    MAIL_PASSWORD=3ed3e52774fa43 <br>
-    MAIL_ENCRYPTION=null <br>
-    MAIL_FROM_ADDRESS=Cristy@estudiocristrys.com <br>
-    MAIL_FROM_NAME="CRISTY" <br>
-    
-
-Para hacer la comprobación de los correos, se utilizo la siguiente cuenta:
-
-    correo:
-    
-    estudiocristyprogra@gmail.com
-
-    contraseña:
-
-    estudi0Cristy13
-
-La sesión se hace mediante credenciales de tercero con google, con esta cuenta se puede comprobar los correos de verificación, los correos personalizados de los clientes a la administración del estudio y otra opción extra.
 
 <h2> 3) Task Scheduling </h2>
     Se tiene programada que se envie un correo automatico con cuenta con el estado de la página durante cada minuto. Eso se aplica por medio del siguiente comando:
