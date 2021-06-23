@@ -15,7 +15,6 @@
 
 <h1> Integrante: </h1>
     <h2> Daniel Valente. </h2> <br>
-    <h2> Fernando Martinez. </h2><hr>
 
 <h1> Instrucciones extra de su uso: </h1> <br>
 <h2> 1) Instrucciones para el metodo de pago: </h2> <br>
